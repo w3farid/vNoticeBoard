@@ -1,0 +1,978 @@
+2017-09-30 01:14:47.481  INFO 10588 --- [main] c.vNoticeBoard.VNoticeBoardApplication   : Starting VNoticeBoardApplication on me with PID 10588 (/home/farid/Projects/Java/vNoticeBoard/bin started by farid in /home/farid/Projects/Java/vNoticeBoard)
+2017-09-30 01:14:47.488  INFO 10588 --- [main] c.vNoticeBoard.VNoticeBoardApplication   : No active profile set, falling back to default profiles: default
+2017-09-30 01:14:47.677  INFO 10588 --- [main] ConfigServletWebServerApplicationContext : Refreshing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@56673b2c: startup date [Sat Sep 30 01:14:47 BDT 2017]; root of context hierarchy
+2017-09-30 01:14:48.797  INFO 10588 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2017-09-30 01:14:48.806  INFO 10588 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2017-09-30 01:14:48.807  INFO 10588 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.20
+2017-09-30 01:14:48.905  INFO 10588 --- [localhost-startStop-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2017-09-30 01:14:48.905  INFO 10588 --- [localhost-startStop-1] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1231 ms
+2017-09-30 01:14:49.010  INFO 10588 --- [localhost-startStop-1] o.s.b.w.servlet.ServletRegistrationBean  : Mapping servlet: 'dispatcherServlet' to [/]
+2017-09-30 01:14:49.013  INFO 10588 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'characterEncodingFilter' to: [/*]
+2017-09-30 01:14:49.014  INFO 10588 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2017-09-30 01:14:49.014  INFO 10588 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2017-09-30 01:14:49.014  INFO 10588 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'requestContextFilter' to: [/*]
+2017-09-30 01:14:49.247  INFO 10588 --- [main] com.zaxxer.hikari.HikariDataSource       : testdb - Starting...
+2017-09-30 01:14:49.291  INFO 10588 --- [main] com.zaxxer.hikari.pool.PoolBase          : testdb - Driver does not support get/set network timeout for connections. (Method org.postgresql.jdbc4.Jdbc4Connection.getNetworkTimeout() is not yet implemented.)
+2017-09-30 01:14:49.308  INFO 10588 --- [main] com.zaxxer.hikari.HikariDataSource       : testdb - Start completed.
+2017-09-30 01:14:49.351  INFO 10588 --- [main] j.LocalContainerEntityManagerFactoryBean : Building JPA container EntityManagerFactory for persistence unit 'default'
+2017-09-30 01:14:49.362  INFO 10588 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2017-09-30 01:14:49.441  INFO 10588 --- [main] org.hibernate.Version                    : HHH000412: Hibernate Core {5.2.10.Final}
+2017-09-30 01:14:49.443  INFO 10588 --- [main] org.hibernate.cfg.Environment            : HHH000206: hibernate.properties not found
+2017-09-30 01:14:49.514  INFO 10588 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+2017-09-30 01:14:49.865  INFO 10588 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL94Dialect
+2017-09-30 01:14:49.953  INFO 10588 --- [main] o.h.e.j.e.i.LobCreatorBuilderImpl        : HHH000424: Disabling contextual LOB creation as createClob() method threw error : java.lang.reflect.InvocationTargetException
+2017-09-30 01:14:49.954  INFO 10588 --- [main] org.hibernate.type.BasicTypeRegistry     : HHH000270: Type registration [java.util.UUID] overrides previous : org.hibernate.type.UUIDBinaryType@43c7fe8a
+2017-09-30 01:14:50.066  INFO 10588 --- [main] o.h.t.schema.internal.SchemaCreatorImpl  : HHH000476: Executing import script 'org.hibernate.tool.schema.internal.exec.ScriptSourceInputNonExistentImpl@1544ded3'
+2017-09-30 01:14:50.069  INFO 10588 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2017-09-30 01:14:50.428  INFO 10588 --- [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : Looking for @ControllerAdvice: org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@56673b2c: startup date [Sat Sep 30 01:14:47 BDT 2017]; root of context hierarchy
+2017-09-30 01:14:50.491  INFO 10588 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/{boardName}],methods=[GET]}" onto public java.lang.String com.vNoticeBoard.controller.BoardController.showBoard(java.lang.String,org.springframework.ui.Model)
+2017-09-30 01:14:50.492  INFO 10588 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/],methods=[GET]}" onto public java.lang.String com.vNoticeBoard.controller.HomeController.showHome()
+2017-09-30 01:14:50.496  INFO 10588 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2017-09-30 01:14:50.497  INFO 10588 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2017-09-30 01:14:50.539  INFO 10588 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2017-09-30 01:14:50.539  INFO 10588 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2017-09-30 01:14:50.583  INFO 10588 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2017-09-30 01:14:51.210  INFO 10588 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Registering beans for JMX exposure on startup
+2017-09-30 01:14:51.211  INFO 10588 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Bean with name 'dataSource' has been autodetected for JMX exposure
+2017-09-30 01:14:51.216  INFO 10588 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Located MBean 'dataSource': registering with JMX server as MBean [com.zaxxer.hikari:name=dataSource,type=HikariDataSource]
+2017-09-30 01:14:51.256  INFO 10588 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http)
+2017-09-30 01:14:51.261  INFO 10588 --- [main] c.vNoticeBoard.VNoticeBoardApplication   : Started VNoticeBoardApplication in 4.217 seconds (JVM running for 5.696)
+2017-09-30 01:14:59.959  INFO 10588 --- [http-nio-8080-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring FrameworkServlet 'dispatcherServlet'
+2017-09-30 01:14:59.959  INFO 10588 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : FrameworkServlet 'dispatcherServlet': initialization started
+2017-09-30 01:14:59.976  INFO 10588 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : FrameworkServlet 'dispatcherServlet': initialization completed in 17 ms
+2017-09-30 01:15:04.822  WARN 10588 --- [http-nio-8080-exec-3] n.n.u.t.decorators.DecoratorProcessor    : The layout:decorator/data-layout-decorator processor has been deprecated and will be removed in the next major version of the layout dialect.  Please use layout:decorate/data-layout-decorate instead to future-proof your code.  See https://github.com/ultraq/thymeleaf-layout-dialect/issues/95 for more information.
+2017-09-30 01:15:04.902  WARN 10588 --- [http-nio-8080-exec-3] n.n.u.t.expressions.ExpressionProcessor  : Fragment expression "layouts/main" is being wrapped as a Thymeleaf 3 fragment expression (~{...}) for backwards compatibility purposes.  This wrapping will be dropped in the next major version of the expression processor, so please rewrite as a Thymeleaf 3 fragment expression to future-proof your code.  See https://github.com/thymeleaf/thymeleaf/issues/451 for more information.
+2017-09-30 01:15:05.077  WARN 10588 --- [http-nio-8080-exec-3] n.n.u.t.d.TitlePatternProcessor          : The $DECORATOR_TITLE token is deprecated and will be removed in the next major version of the layout dialect.  Please use the $LAYOUT_TITLE token instead to future-proof your code.  See https://github.com/ultraq/thymeleaf-layout-dialect/issues/95 for more information.
+2017-09-30 01:15:21.908  INFO 10588 --- [RMI TCP Connection(2)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2017-09-30 01:15:21.908  INFO 10588 --- [RMI TCP Connection(2)-127.0.0.1] ConfigServletWebServerApplicationContext : Closing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@56673b2c: startup date [Sat Sep 30 01:14:47 BDT 2017]; root of context hierarchy
+2017-09-30 01:15:21.910  INFO 10588 --- [RMI TCP Connection(2)-127.0.0.1] o.s.j.e.a.AnnotationMBeanExporter        : Unregistering JMX-exposed beans on shutdown
+2017-09-30 01:15:21.910  INFO 10588 --- [RMI TCP Connection(2)-127.0.0.1] o.s.j.e.a.AnnotationMBeanExporter        : Unregistering JMX-exposed beans
+2017-09-30 01:15:21.911  INFO 10588 --- [RMI TCP Connection(2)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2017-09-30 01:15:21.911  INFO 10588 --- [RMI TCP Connection(2)-127.0.0.1] .SchemaDropperImpl$DelayedDropActionImpl : HHH000477: Starting delayed drop of schema as part of SessionFactory shut-down'
+2017-09-30 01:15:21.912  INFO 10588 --- [RMI TCP Connection(2)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : testdb - Shutdown initiated...
+2017-09-30 01:15:21.919  INFO 10588 --- [RMI TCP Connection(2)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : testdb - Shutdown completed.
+2017-09-30 01:15:39.990  INFO 12053 --- [main] c.vNoticeBoard.VNoticeBoardApplication   : Starting VNoticeBoardApplication on me with PID 12053 (/home/farid/Projects/Java/vNoticeBoard/bin started by farid in /home/farid/Projects/Java/vNoticeBoard)
+2017-09-30 01:15:39.993  INFO 12053 --- [main] c.vNoticeBoard.VNoticeBoardApplication   : No active profile set, falling back to default profiles: default
+2017-09-30 01:15:40.175  INFO 12053 --- [main] ConfigServletWebServerApplicationContext : Refreshing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@123ef382: startup date [Sat Sep 30 01:15:40 BDT 2017]; root of context hierarchy
+2017-09-30 01:15:41.209  INFO 12053 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2017-09-30 01:15:41.216  INFO 12053 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2017-09-30 01:15:41.217  INFO 12053 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.20
+2017-09-30 01:15:41.267  INFO 12053 --- [localhost-startStop-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2017-09-30 01:15:41.268  INFO 12053 --- [localhost-startStop-1] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1097 ms
+2017-09-30 01:15:41.343  INFO 12053 --- [localhost-startStop-1] o.s.b.w.servlet.ServletRegistrationBean  : Mapping servlet: 'dispatcherServlet' to [/]
+2017-09-30 01:15:41.346  INFO 12053 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'characterEncodingFilter' to: [/*]
+2017-09-30 01:15:41.347  INFO 12053 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2017-09-30 01:15:41.347  INFO 12053 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2017-09-30 01:15:41.347  INFO 12053 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'requestContextFilter' to: [/*]
+2017-09-30 01:15:41.516  INFO 12053 --- [main] com.zaxxer.hikari.HikariDataSource       : testdb - Starting...
+2017-09-30 01:15:41.541  INFO 12053 --- [main] com.zaxxer.hikari.pool.PoolBase          : testdb - Driver does not support get/set network timeout for connections. (Method org.postgresql.jdbc4.Jdbc4Connection.getNetworkTimeout() is not yet implemented.)
+2017-09-30 01:15:41.555  INFO 12053 --- [main] com.zaxxer.hikari.HikariDataSource       : testdb - Start completed.
+2017-09-30 01:15:41.583  INFO 12053 --- [main] j.LocalContainerEntityManagerFactoryBean : Building JPA container EntityManagerFactory for persistence unit 'default'
+2017-09-30 01:15:41.591  INFO 12053 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2017-09-30 01:15:41.627  INFO 12053 --- [main] org.hibernate.Version                    : HHH000412: Hibernate Core {5.2.10.Final}
+2017-09-30 01:15:41.628  INFO 12053 --- [main] org.hibernate.cfg.Environment            : HHH000206: hibernate.properties not found
+2017-09-30 01:15:41.653  INFO 12053 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+2017-09-30 01:15:41.721  INFO 12053 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL94Dialect
+2017-09-30 01:15:41.887  INFO 12053 --- [main] o.h.e.j.e.i.LobCreatorBuilderImpl        : HHH000424: Disabling contextual LOB creation as createClob() method threw error : java.lang.reflect.InvocationTargetException
+2017-09-30 01:15:41.888  INFO 12053 --- [main] org.hibernate.type.BasicTypeRegistry     : HHH000270: Type registration [java.util.UUID] overrides previous : org.hibernate.type.UUIDBinaryType@44032fde
+2017-09-30 01:15:41.975  INFO 12053 --- [main] o.h.t.schema.internal.SchemaCreatorImpl  : HHH000476: Executing import script 'org.hibernate.tool.schema.internal.exec.ScriptSourceInputNonExistentImpl@57fbc06f'
+2017-09-30 01:15:41.978  INFO 12053 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2017-09-30 01:15:42.287  INFO 12053 --- [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : Looking for @ControllerAdvice: org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@123ef382: startup date [Sat Sep 30 01:15:40 BDT 2017]; root of context hierarchy
+2017-09-30 01:15:42.336  INFO 12053 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/{boardName}],methods=[GET]}" onto public java.lang.String com.vNoticeBoard.controller.BoardController.showBoard(java.lang.String,org.springframework.ui.Model)
+2017-09-30 01:15:42.337  INFO 12053 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/],methods=[GET]}" onto public java.lang.String com.vNoticeBoard.controller.HomeController.showHome()
+2017-09-30 01:15:42.343  INFO 12053 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2017-09-30 01:15:42.344  INFO 12053 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2017-09-30 01:15:42.371  INFO 12053 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2017-09-30 01:15:42.371  INFO 12053 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2017-09-30 01:15:42.405  INFO 12053 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2017-09-30 01:15:42.781  INFO 12053 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Registering beans for JMX exposure on startup
+2017-09-30 01:15:42.782  INFO 12053 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Bean with name 'dataSource' has been autodetected for JMX exposure
+2017-09-30 01:15:42.786  INFO 12053 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Located MBean 'dataSource': registering with JMX server as MBean [com.zaxxer.hikari:name=dataSource,type=HikariDataSource]
+2017-09-30 01:15:42.816  INFO 12053 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http)
+2017-09-30 01:15:42.820  INFO 12053 --- [main] c.vNoticeBoard.VNoticeBoardApplication   : Started VNoticeBoardApplication in 3.091 seconds (JVM running for 3.418)
+2017-09-30 01:16:12.348  INFO 12053 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring FrameworkServlet 'dispatcherServlet'
+2017-09-30 01:16:12.348  INFO 12053 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : FrameworkServlet 'dispatcherServlet': initialization started
+2017-09-30 01:16:12.360  INFO 12053 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : FrameworkServlet 'dispatcherServlet': initialization completed in 12 ms
+2017-09-30 01:16:12.611  WARN 12053 --- [http-nio-8080-exec-1] n.n.u.t.decorators.DecoratorProcessor    : The layout:decorator/data-layout-decorator processor has been deprecated and will be removed in the next major version of the layout dialect.  Please use layout:decorate/data-layout-decorate instead to future-proof your code.  See https://github.com/ultraq/thymeleaf-layout-dialect/issues/95 for more information.
+2017-09-30 01:16:12.684  WARN 12053 --- [http-nio-8080-exec-1] n.n.u.t.expressions.ExpressionProcessor  : Fragment expression "layouts/main" is being wrapped as a Thymeleaf 3 fragment expression (~{...}) for backwards compatibility purposes.  This wrapping will be dropped in the next major version of the expression processor, so please rewrite as a Thymeleaf 3 fragment expression to future-proof your code.  See https://github.com/thymeleaf/thymeleaf/issues/451 for more information.
+2017-09-30 01:16:12.907  WARN 12053 --- [http-nio-8080-exec-1] n.n.u.t.d.TitlePatternProcessor          : The $DECORATOR_TITLE token is deprecated and will be removed in the next major version of the layout dialect.  Please use the $LAYOUT_TITLE token instead to future-proof your code.  See https://github.com/ultraq/thymeleaf-layout-dialect/issues/95 for more information.
+2017-09-30 01:17:11.835  INFO 12053 --- [RMI TCP Connection(2)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2017-09-30 01:17:11.835  INFO 12053 --- [RMI TCP Connection(2)-127.0.0.1] ConfigServletWebServerApplicationContext : Closing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@123ef382: startup date [Sat Sep 30 01:15:40 BDT 2017]; root of context hierarchy
+2017-09-30 01:17:11.837  INFO 12053 --- [RMI TCP Connection(2)-127.0.0.1] o.s.j.e.a.AnnotationMBeanExporter        : Unregistering JMX-exposed beans on shutdown
+2017-09-30 01:17:11.837  INFO 12053 --- [RMI TCP Connection(2)-127.0.0.1] o.s.j.e.a.AnnotationMBeanExporter        : Unregistering JMX-exposed beans
+2017-09-30 01:17:11.838  INFO 12053 --- [RMI TCP Connection(2)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2017-09-30 01:17:11.838  INFO 12053 --- [RMI TCP Connection(2)-127.0.0.1] .SchemaDropperImpl$DelayedDropActionImpl : HHH000477: Starting delayed drop of schema as part of SessionFactory shut-down'
+2017-09-30 01:17:11.839  INFO 12053 --- [RMI TCP Connection(2)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : testdb - Shutdown initiated...
+2017-09-30 01:17:11.845  INFO 12053 --- [RMI TCP Connection(2)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : testdb - Shutdown completed.
+2017-09-30 01:17:17.216  INFO 14658 --- [main] c.vNoticeBoard.VNoticeBoardApplication   : Starting VNoticeBoardApplication on me with PID 14658 (/home/farid/Projects/Java/vNoticeBoard/bin started by farid in /home/farid/Projects/Java/vNoticeBoard)
+2017-09-30 01:17:17.218  INFO 14658 --- [main] c.vNoticeBoard.VNoticeBoardApplication   : No active profile set, falling back to default profiles: default
+2017-09-30 01:17:17.398  INFO 14658 --- [main] ConfigServletWebServerApplicationContext : Refreshing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@123ef382: startup date [Sat Sep 30 01:17:17 BDT 2017]; root of context hierarchy
+2017-09-30 01:17:18.303  INFO 14658 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2017-09-30 01:17:18.311  INFO 14658 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2017-09-30 01:17:18.311  INFO 14658 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.20
+2017-09-30 01:17:18.366  INFO 14658 --- [localhost-startStop-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2017-09-30 01:17:18.366  INFO 14658 --- [localhost-startStop-1] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 972 ms
+2017-09-30 01:17:18.442  INFO 14658 --- [localhost-startStop-1] o.s.b.w.servlet.ServletRegistrationBean  : Mapping servlet: 'dispatcherServlet' to [/]
+2017-09-30 01:17:18.445  INFO 14658 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'characterEncodingFilter' to: [/*]
+2017-09-30 01:17:18.445  INFO 14658 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2017-09-30 01:17:18.445  INFO 14658 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2017-09-30 01:17:18.446  INFO 14658 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'requestContextFilter' to: [/*]
+2017-09-30 01:17:18.575  INFO 14658 --- [main] com.zaxxer.hikari.HikariDataSource       : testdb - Starting...
+2017-09-30 01:17:18.602  INFO 14658 --- [main] com.zaxxer.hikari.pool.PoolBase          : testdb - Driver does not support get/set network timeout for connections. (Method org.postgresql.jdbc4.Jdbc4Connection.getNetworkTimeout() is not yet implemented.)
+2017-09-30 01:17:18.615  INFO 14658 --- [main] com.zaxxer.hikari.HikariDataSource       : testdb - Start completed.
+2017-09-30 01:17:18.654  INFO 14658 --- [main] j.LocalContainerEntityManagerFactoryBean : Building JPA container EntityManagerFactory for persistence unit 'default'
+2017-09-30 01:17:18.662  INFO 14658 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2017-09-30 01:17:18.698  INFO 14658 --- [main] org.hibernate.Version                    : HHH000412: Hibernate Core {5.2.10.Final}
+2017-09-30 01:17:18.699  INFO 14658 --- [main] org.hibernate.cfg.Environment            : HHH000206: hibernate.properties not found
+2017-09-30 01:17:18.721  INFO 14658 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+2017-09-30 01:17:18.788  INFO 14658 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL94Dialect
+2017-09-30 01:17:18.949  INFO 14658 --- [main] o.h.e.j.e.i.LobCreatorBuilderImpl        : HHH000424: Disabling contextual LOB creation as createClob() method threw error : java.lang.reflect.InvocationTargetException
+2017-09-30 01:17:18.950  INFO 14658 --- [main] org.hibernate.type.BasicTypeRegistry     : HHH000270: Type registration [java.util.UUID] overrides previous : org.hibernate.type.UUIDBinaryType@53d13cd4
+2017-09-30 01:17:19.036  INFO 14658 --- [main] o.h.t.schema.internal.SchemaCreatorImpl  : HHH000476: Executing import script 'org.hibernate.tool.schema.internal.exec.ScriptSourceInputNonExistentImpl@eb6ec6'
+2017-09-30 01:17:19.038  INFO 14658 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2017-09-30 01:17:19.320  INFO 14658 --- [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : Looking for @ControllerAdvice: org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@123ef382: startup date [Sat Sep 30 01:17:17 BDT 2017]; root of context hierarchy
+2017-09-30 01:17:19.372  INFO 14658 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/{boardName}],methods=[GET]}" onto public java.lang.String com.vNoticeBoard.controller.BoardController.showBoard(java.lang.String,org.springframework.ui.Model)
+2017-09-30 01:17:19.374  INFO 14658 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/],methods=[GET]}" onto public java.lang.String com.vNoticeBoard.controller.HomeController.showHome()
+2017-09-30 01:17:19.381  INFO 14658 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2017-09-30 01:17:19.381  INFO 14658 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2017-09-30 01:17:19.415  INFO 14658 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2017-09-30 01:17:19.415  INFO 14658 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2017-09-30 01:17:19.449  INFO 14658 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2017-09-30 01:17:19.820  INFO 14658 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Registering beans for JMX exposure on startup
+2017-09-30 01:17:19.821  INFO 14658 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Bean with name 'dataSource' has been autodetected for JMX exposure
+2017-09-30 01:17:19.825  INFO 14658 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Located MBean 'dataSource': registering with JMX server as MBean [com.zaxxer.hikari:name=dataSource,type=HikariDataSource]
+2017-09-30 01:17:19.859  INFO 14658 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http)
+2017-09-30 01:17:19.862  INFO 14658 --- [main] c.vNoticeBoard.VNoticeBoardApplication   : Started VNoticeBoardApplication in 2.924 seconds (JVM running for 3.251)
+2017-09-30 01:18:27.050  INFO 14658 --- [RMI TCP Connection(2)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2017-09-30 01:18:27.051  INFO 14658 --- [RMI TCP Connection(2)-127.0.0.1] ConfigServletWebServerApplicationContext : Closing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@123ef382: startup date [Sat Sep 30 01:17:17 BDT 2017]; root of context hierarchy
+2017-09-30 01:18:27.052  INFO 14658 --- [RMI TCP Connection(2)-127.0.0.1] o.s.j.e.a.AnnotationMBeanExporter        : Unregistering JMX-exposed beans on shutdown
+2017-09-30 01:18:27.052  INFO 14658 --- [RMI TCP Connection(2)-127.0.0.1] o.s.j.e.a.AnnotationMBeanExporter        : Unregistering JMX-exposed beans
+2017-09-30 01:18:27.053  INFO 14658 --- [RMI TCP Connection(2)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2017-09-30 01:18:27.053  INFO 14658 --- [RMI TCP Connection(2)-127.0.0.1] .SchemaDropperImpl$DelayedDropActionImpl : HHH000477: Starting delayed drop of schema as part of SessionFactory shut-down'
+2017-09-30 01:18:27.054  INFO 14658 --- [RMI TCP Connection(2)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : testdb - Shutdown initiated...
+2017-09-30 01:18:27.059  INFO 14658 --- [RMI TCP Connection(2)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : testdb - Shutdown completed.
+2017-09-30 01:43:22.161  INFO 25060 --- [main] c.vNoticeBoard.VNoticeBoardApplication   : Starting VNoticeBoardApplication on me with PID 25060 (/home/farid/Projects/Java/vNoticeBoard/bin started by farid in /home/farid/Projects/Java/vNoticeBoard)
+2017-09-30 01:43:22.164  INFO 25060 --- [main] c.vNoticeBoard.VNoticeBoardApplication   : No active profile set, falling back to default profiles: default
+2017-09-30 01:43:22.321  INFO 25060 --- [main] ConfigServletWebServerApplicationContext : Refreshing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@123ef382: startup date [Sat Sep 30 01:43:22 BDT 2017]; root of context hierarchy
+2017-09-30 01:43:23.297  INFO 25060 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2017-09-30 01:43:23.303  INFO 25060 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2017-09-30 01:43:23.304  INFO 25060 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.20
+2017-09-30 01:43:23.357  INFO 25060 --- [localhost-startStop-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2017-09-30 01:43:23.357  INFO 25060 --- [localhost-startStop-1] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1039 ms
+2017-09-30 01:43:23.437  INFO 25060 --- [localhost-startStop-1] o.s.b.w.servlet.ServletRegistrationBean  : Mapping servlet: 'dispatcherServlet' to [/]
+2017-09-30 01:43:23.440  INFO 25060 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'characterEncodingFilter' to: [/*]
+2017-09-30 01:43:23.440  INFO 25060 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2017-09-30 01:43:23.441  INFO 25060 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2017-09-30 01:43:23.441  INFO 25060 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'requestContextFilter' to: [/*]
+2017-09-30 01:43:23.581  INFO 25060 --- [main] com.zaxxer.hikari.HikariDataSource       : testdb - Starting...
+2017-09-30 01:43:23.605  INFO 25060 --- [main] com.zaxxer.hikari.pool.PoolBase          : testdb - Driver does not support get/set network timeout for connections. (Method org.postgresql.jdbc4.Jdbc4Connection.getNetworkTimeout() is not yet implemented.)
+2017-09-30 01:43:23.618  INFO 25060 --- [main] com.zaxxer.hikari.HikariDataSource       : testdb - Start completed.
+2017-09-30 01:43:23.649  INFO 25060 --- [main] j.LocalContainerEntityManagerFactoryBean : Building JPA container EntityManagerFactory for persistence unit 'default'
+2017-09-30 01:43:23.657  INFO 25060 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2017-09-30 01:43:23.697  INFO 25060 --- [main] org.hibernate.Version                    : HHH000412: Hibernate Core {5.2.10.Final}
+2017-09-30 01:43:23.698  INFO 25060 --- [main] org.hibernate.cfg.Environment            : HHH000206: hibernate.properties not found
+2017-09-30 01:43:23.739  INFO 25060 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+2017-09-30 01:43:23.811  INFO 25060 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL94Dialect
+2017-09-30 01:43:23.898  INFO 25060 --- [main] o.h.e.j.e.i.LobCreatorBuilderImpl        : HHH000424: Disabling contextual LOB creation as createClob() method threw error : java.lang.reflect.InvocationTargetException
+2017-09-30 01:43:23.899  INFO 25060 --- [main] org.hibernate.type.BasicTypeRegistry     : HHH000270: Type registration [java.util.UUID] overrides previous : org.hibernate.type.UUIDBinaryType@cda6019
+2017-09-30 01:43:24.186  WARN 25060 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2017-09-30 01:43:24.187  WARN 25060 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : table "board" does not exist, skipping
+2017-09-30 01:43:24.187  WARN 25060 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2017-09-30 01:43:24.187  WARN 25060 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : sequence "hibernate_sequence" does not exist, skipping
+2017-09-30 01:43:24.292  INFO 25060 --- [main] o.h.t.schema.internal.SchemaCreatorImpl  : HHH000476: Executing import script 'org.hibernate.tool.schema.internal.exec.ScriptSourceInputNonExistentImpl@53f0d09c'
+2017-09-30 01:43:24.295  INFO 25060 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2017-09-30 01:43:24.552  INFO 25060 --- [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : Looking for @ControllerAdvice: org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@123ef382: startup date [Sat Sep 30 01:43:22 BDT 2017]; root of context hierarchy
+2017-09-30 01:43:24.598  INFO 25060 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/{boardName}],methods=[GET]}" onto public java.lang.String com.vNoticeBoard.controller.BoardController.showBoard(java.lang.String,org.springframework.ui.Model)
+2017-09-30 01:43:24.599  INFO 25060 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/],methods=[GET]}" onto public java.lang.String com.vNoticeBoard.controller.HomeController.showHome()
+2017-09-30 01:43:24.603  INFO 25060 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2017-09-30 01:43:24.603  INFO 25060 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2017-09-30 01:43:24.626  INFO 25060 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2017-09-30 01:43:24.627  INFO 25060 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2017-09-30 01:43:24.659  INFO 25060 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2017-09-30 01:43:25.074  INFO 25060 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Registering beans for JMX exposure on startup
+2017-09-30 01:43:25.075  INFO 25060 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Bean with name 'dataSource' has been autodetected for JMX exposure
+2017-09-30 01:43:25.080  INFO 25060 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Located MBean 'dataSource': registering with JMX server as MBean [com.zaxxer.hikari:name=dataSource,type=HikariDataSource]
+2017-09-30 01:43:25.108  INFO 25060 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http)
+2017-09-30 01:43:25.113  INFO 25060 --- [main] c.vNoticeBoard.VNoticeBoardApplication   : Started VNoticeBoardApplication in 3.235 seconds (JVM running for 3.547)
+2017-09-30 01:46:41.906  INFO 25060 --- [RMI TCP Connection(2)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2017-09-30 01:46:41.906  INFO 25060 --- [RMI TCP Connection(2)-127.0.0.1] ConfigServletWebServerApplicationContext : Closing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@123ef382: startup date [Sat Sep 30 01:43:22 BDT 2017]; root of context hierarchy
+2017-09-30 01:46:41.908  INFO 25060 --- [RMI TCP Connection(2)-127.0.0.1] o.s.j.e.a.AnnotationMBeanExporter        : Unregistering JMX-exposed beans on shutdown
+2017-09-30 01:46:41.908  INFO 25060 --- [RMI TCP Connection(2)-127.0.0.1] o.s.j.e.a.AnnotationMBeanExporter        : Unregistering JMX-exposed beans
+2017-09-30 01:46:41.908  INFO 25060 --- [RMI TCP Connection(2)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2017-09-30 01:46:41.909  INFO 25060 --- [RMI TCP Connection(2)-127.0.0.1] .SchemaDropperImpl$DelayedDropActionImpl : HHH000477: Starting delayed drop of schema as part of SessionFactory shut-down'
+2017-09-30 01:46:41.937  INFO 25060 --- [RMI TCP Connection(2)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : testdb - Shutdown initiated...
+2017-09-30 01:46:41.943  INFO 25060 --- [RMI TCP Connection(2)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : testdb - Shutdown completed.
+2017-09-30 01:48:48.321  INFO 1606 --- [main] c.vNoticeBoard.VNoticeBoardApplication   : Starting VNoticeBoardApplication on me with PID 1606 (/home/farid/Projects/Java/vNoticeBoard/bin started by farid in /home/farid/Projects/Java/vNoticeBoard)
+2017-09-30 01:48:48.324  INFO 1606 --- [main] c.vNoticeBoard.VNoticeBoardApplication   : No active profile set, falling back to default profiles: default
+2017-09-30 01:48:48.471  INFO 1606 --- [main] ConfigServletWebServerApplicationContext : Refreshing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@123ef382: startup date [Sat Sep 30 01:48:48 BDT 2017]; root of context hierarchy
+2017-09-30 01:48:49.366  INFO 1606 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2017-09-30 01:48:49.375  INFO 1606 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2017-09-30 01:48:49.375  INFO 1606 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.20
+2017-09-30 01:48:49.425  INFO 1606 --- [localhost-startStop-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2017-09-30 01:48:49.426  INFO 1606 --- [localhost-startStop-1] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 957 ms
+2017-09-30 01:48:49.498  INFO 1606 --- [localhost-startStop-1] o.s.b.w.servlet.ServletRegistrationBean  : Mapping servlet: 'dispatcherServlet' to [/]
+2017-09-30 01:48:49.501  INFO 1606 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'characterEncodingFilter' to: [/*]
+2017-09-30 01:48:49.501  INFO 1606 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2017-09-30 01:48:49.501  INFO 1606 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2017-09-30 01:48:49.501  INFO 1606 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'requestContextFilter' to: [/*]
+2017-09-30 01:48:49.648  INFO 1606 --- [main] com.zaxxer.hikari.HikariDataSource       : testdb - Starting...
+2017-09-30 01:48:49.693  INFO 1606 --- [main] com.zaxxer.hikari.pool.PoolBase          : testdb - Driver does not support get/set network timeout for connections. (Method org.postgresql.jdbc4.Jdbc4Connection.getNetworkTimeout() is not yet implemented.)
+2017-09-30 01:48:49.706  INFO 1606 --- [main] com.zaxxer.hikari.HikariDataSource       : testdb - Start completed.
+2017-09-30 01:48:49.732  INFO 1606 --- [main] j.LocalContainerEntityManagerFactoryBean : Building JPA container EntityManagerFactory for persistence unit 'default'
+2017-09-30 01:48:49.739  INFO 1606 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2017-09-30 01:48:49.776  INFO 1606 --- [main] org.hibernate.Version                    : HHH000412: Hibernate Core {5.2.10.Final}
+2017-09-30 01:48:49.777  INFO 1606 --- [main] org.hibernate.cfg.Environment            : HHH000206: hibernate.properties not found
+2017-09-30 01:48:49.800  INFO 1606 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+2017-09-30 01:48:49.861  INFO 1606 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL94Dialect
+2017-09-30 01:48:50.024  INFO 1606 --- [main] o.h.e.j.e.i.LobCreatorBuilderImpl        : HHH000424: Disabling contextual LOB creation as createClob() method threw error : java.lang.reflect.InvocationTargetException
+2017-09-30 01:48:50.025  INFO 1606 --- [main] org.hibernate.type.BasicTypeRegistry     : HHH000270: Type registration [java.util.UUID] overrides previous : org.hibernate.type.UUIDBinaryType@429f7919
+2017-09-30 01:48:50.218  WARN 1606 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2017-09-30 01:48:50.218  WARN 1606 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : table "board" does not exist, skipping
+2017-09-30 01:48:50.218  WARN 1606 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2017-09-30 01:48:50.218  WARN 1606 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : sequence "hibernate_sequence" does not exist, skipping
+2017-09-30 01:48:50.330  INFO 1606 --- [main] o.h.t.schema.internal.SchemaCreatorImpl  : HHH000476: Executing import script 'org.hibernate.tool.schema.internal.exec.ScriptSourceInputNonExistentImpl@5f7eee96'
+2017-09-30 01:48:50.333  INFO 1606 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2017-09-30 01:48:50.568  INFO 1606 --- [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : Looking for @ControllerAdvice: org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@123ef382: startup date [Sat Sep 30 01:48:48 BDT 2017]; root of context hierarchy
+2017-09-30 01:48:50.611  INFO 1606 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/{boardName}],methods=[GET]}" onto public java.lang.String com.vNoticeBoard.controller.BoardController.showBoard(java.lang.String,org.springframework.ui.Model)
+2017-09-30 01:48:50.611  INFO 1606 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/],methods=[GET]}" onto public java.lang.String com.vNoticeBoard.controller.HomeController.showHome()
+2017-09-30 01:48:50.615  INFO 1606 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2017-09-30 01:48:50.616  INFO 1606 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2017-09-30 01:48:50.647  INFO 1606 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2017-09-30 01:48:50.648  INFO 1606 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2017-09-30 01:48:50.674  INFO 1606 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2017-09-30 01:48:51.040  INFO 1606 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Registering beans for JMX exposure on startup
+2017-09-30 01:48:51.041  INFO 1606 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Bean with name 'dataSource' has been autodetected for JMX exposure
+2017-09-30 01:48:51.045  INFO 1606 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Located MBean 'dataSource': registering with JMX server as MBean [com.zaxxer.hikari:name=dataSource,type=HikariDataSource]
+2017-09-30 01:48:51.070  INFO 1606 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http)
+2017-09-30 01:48:51.074  INFO 1606 --- [main] c.vNoticeBoard.VNoticeBoardApplication   : Started VNoticeBoardApplication in 3.012 seconds (JVM running for 3.331)
+2017-09-30 01:51:56.109  INFO 1606 --- [RMI TCP Connection(2)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2017-09-30 01:51:56.110  INFO 1606 --- [RMI TCP Connection(2)-127.0.0.1] ConfigServletWebServerApplicationContext : Closing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@123ef382: startup date [Sat Sep 30 01:48:48 BDT 2017]; root of context hierarchy
+2017-09-30 01:51:56.111  INFO 1606 --- [RMI TCP Connection(2)-127.0.0.1] o.s.j.e.a.AnnotationMBeanExporter        : Unregistering JMX-exposed beans on shutdown
+2017-09-30 01:51:56.111  INFO 1606 --- [RMI TCP Connection(2)-127.0.0.1] o.s.j.e.a.AnnotationMBeanExporter        : Unregistering JMX-exposed beans
+2017-09-30 01:51:56.112  INFO 1606 --- [RMI TCP Connection(2)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2017-09-30 01:51:56.112  INFO 1606 --- [RMI TCP Connection(2)-127.0.0.1] .SchemaDropperImpl$DelayedDropActionImpl : HHH000477: Starting delayed drop of schema as part of SessionFactory shut-down'
+2017-09-30 01:51:56.135  INFO 1606 --- [RMI TCP Connection(2)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : testdb - Shutdown initiated...
+2017-09-30 01:51:56.142  INFO 1606 --- [RMI TCP Connection(2)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : testdb - Shutdown completed.
+2017-09-30 01:52:14.623  INFO 7414 --- [main] c.vNoticeBoard.VNoticeBoardApplication   : Starting VNoticeBoardApplication on me with PID 7414 (/home/farid/Projects/Java/vNoticeBoard/bin started by farid in /home/farid/Projects/Java/vNoticeBoard)
+2017-09-30 01:52:14.625  INFO 7414 --- [main] c.vNoticeBoard.VNoticeBoardApplication   : No active profile set, falling back to default profiles: default
+2017-09-30 01:52:14.766  INFO 7414 --- [main] ConfigServletWebServerApplicationContext : Refreshing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@441772e: startup date [Sat Sep 30 01:52:14 BDT 2017]; root of context hierarchy
+2017-09-30 01:52:15.726  INFO 7414 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2017-09-30 01:52:15.732  INFO 7414 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2017-09-30 01:52:15.733  INFO 7414 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.20
+2017-09-30 01:52:15.797  INFO 7414 --- [localhost-startStop-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2017-09-30 01:52:15.797  INFO 7414 --- [localhost-startStop-1] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1035 ms
+2017-09-30 01:52:15.880  INFO 7414 --- [localhost-startStop-1] o.s.b.w.servlet.ServletRegistrationBean  : Mapping servlet: 'dispatcherServlet' to [/]
+2017-09-30 01:52:15.883  INFO 7414 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'characterEncodingFilter' to: [/*]
+2017-09-30 01:52:15.884  INFO 7414 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2017-09-30 01:52:15.884  INFO 7414 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2017-09-30 01:52:15.884  INFO 7414 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'requestContextFilter' to: [/*]
+2017-09-30 01:52:16.033  INFO 7414 --- [main] com.zaxxer.hikari.HikariDataSource       : testdb - Starting...
+2017-09-30 01:52:16.062  INFO 7414 --- [main] com.zaxxer.hikari.pool.PoolBase          : testdb - Driver does not support get/set network timeout for connections. (Method org.postgresql.jdbc4.Jdbc4Connection.getNetworkTimeout() is not yet implemented.)
+2017-09-30 01:52:16.076  INFO 7414 --- [main] com.zaxxer.hikari.HikariDataSource       : testdb - Start completed.
+2017-09-30 01:52:16.109  INFO 7414 --- [main] j.LocalContainerEntityManagerFactoryBean : Building JPA container EntityManagerFactory for persistence unit 'default'
+2017-09-30 01:52:16.121  INFO 7414 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2017-09-30 01:52:16.158  INFO 7414 --- [main] org.hibernate.Version                    : HHH000412: Hibernate Core {5.2.10.Final}
+2017-09-30 01:52:16.159  INFO 7414 --- [main] org.hibernate.cfg.Environment            : HHH000206: hibernate.properties not found
+2017-09-30 01:52:16.185  INFO 7414 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+2017-09-30 01:52:16.256  INFO 7414 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL94Dialect
+2017-09-30 01:52:16.422  INFO 7414 --- [main] o.h.e.j.e.i.LobCreatorBuilderImpl        : HHH000424: Disabling contextual LOB creation as createClob() method threw error : java.lang.reflect.InvocationTargetException
+2017-09-30 01:52:16.423  INFO 7414 --- [main] org.hibernate.type.BasicTypeRegistry     : HHH000270: Type registration [java.util.UUID] overrides previous : org.hibernate.type.UUIDBinaryType@4012d5bc
+2017-09-30 01:52:16.625  WARN 7414 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2017-09-30 01:52:16.625  WARN 7414 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : table "board" does not exist, skipping
+2017-09-30 01:52:16.626  WARN 7414 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2017-09-30 01:52:16.626  WARN 7414 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : sequence "hibernate_sequence" does not exist, skipping
+2017-09-30 01:52:16.742  INFO 7414 --- [main] o.h.t.schema.internal.SchemaCreatorImpl  : HHH000476: Executing import script 'org.hibernate.tool.schema.internal.exec.ScriptSourceInputNonExistentImpl@6f8e9d06'
+2017-09-30 01:52:16.745  INFO 7414 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2017-09-30 01:52:17.008  INFO 7414 --- [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : Looking for @ControllerAdvice: org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@441772e: startup date [Sat Sep 30 01:52:14 BDT 2017]; root of context hierarchy
+2017-09-30 01:52:17.055  INFO 7414 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/{boardName}],methods=[GET]}" onto public java.lang.String com.vNoticeBoard.controller.BoardController.showBoard(java.lang.String,org.springframework.ui.Model)
+2017-09-30 01:52:17.056  INFO 7414 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/],methods=[GET]}" onto public java.lang.String com.vNoticeBoard.controller.HomeController.showHome()
+2017-09-30 01:52:17.060  INFO 7414 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2017-09-30 01:52:17.061  INFO 7414 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2017-09-30 01:52:17.086  INFO 7414 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2017-09-30 01:52:17.087  INFO 7414 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2017-09-30 01:52:17.118  INFO 7414 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2017-09-30 01:52:17.536  INFO 7414 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Registering beans for JMX exposure on startup
+2017-09-30 01:52:17.537  INFO 7414 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Bean with name 'dataSource' has been autodetected for JMX exposure
+2017-09-30 01:52:17.541  INFO 7414 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Located MBean 'dataSource': registering with JMX server as MBean [com.zaxxer.hikari:name=dataSource,type=HikariDataSource]
+2017-09-30 01:52:17.568  INFO 7414 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http)
+2017-09-30 01:52:17.572  INFO 7414 --- [main] c.vNoticeBoard.VNoticeBoardApplication   : Started VNoticeBoardApplication in 3.199 seconds (JVM running for 3.541)
+2017-09-30 01:52:22.110  INFO 7414 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring FrameworkServlet 'dispatcherServlet'
+2017-09-30 01:52:22.110  INFO 7414 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : FrameworkServlet 'dispatcherServlet': initialization started
+2017-09-30 01:52:22.122  INFO 7414 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : FrameworkServlet 'dispatcherServlet': initialization completed in 11 ms
+2017-09-30 01:52:22.374  WARN 7414 --- [http-nio-8080-exec-1] n.n.u.t.decorators.DecoratorProcessor    : The layout:decorator/data-layout-decorator processor has been deprecated and will be removed in the next major version of the layout dialect.  Please use layout:decorate/data-layout-decorate instead to future-proof your code.  See https://github.com/ultraq/thymeleaf-layout-dialect/issues/95 for more information.
+2017-09-30 01:52:22.439  WARN 7414 --- [http-nio-8080-exec-1] n.n.u.t.expressions.ExpressionProcessor  : Fragment expression "layouts/main" is being wrapped as a Thymeleaf 3 fragment expression (~{...}) for backwards compatibility purposes.  This wrapping will be dropped in the next major version of the expression processor, so please rewrite as a Thymeleaf 3 fragment expression to future-proof your code.  See https://github.com/thymeleaf/thymeleaf/issues/451 for more information.
+2017-09-30 01:52:22.611  WARN 7414 --- [http-nio-8080-exec-1] n.n.u.t.d.TitlePatternProcessor          : The $DECORATOR_TITLE token is deprecated and will be removed in the next major version of the layout dialect.  Please use the $LAYOUT_TITLE token instead to future-proof your code.  See https://github.com/ultraq/thymeleaf-layout-dialect/issues/95 for more information.
+2017-09-30 01:53:12.222  INFO 7414 --- [RMI TCP Connection(2)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2017-09-30 01:53:12.222  INFO 7414 --- [RMI TCP Connection(2)-127.0.0.1] ConfigServletWebServerApplicationContext : Closing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@441772e: startup date [Sat Sep 30 01:52:14 BDT 2017]; root of context hierarchy
+2017-09-30 01:53:12.224  INFO 7414 --- [RMI TCP Connection(2)-127.0.0.1] o.s.j.e.a.AnnotationMBeanExporter        : Unregistering JMX-exposed beans on shutdown
+2017-09-30 01:53:12.224  INFO 7414 --- [RMI TCP Connection(2)-127.0.0.1] o.s.j.e.a.AnnotationMBeanExporter        : Unregistering JMX-exposed beans
+2017-09-30 01:53:12.225  INFO 7414 --- [RMI TCP Connection(2)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2017-09-30 01:53:12.225  INFO 7414 --- [RMI TCP Connection(2)-127.0.0.1] .SchemaDropperImpl$DelayedDropActionImpl : HHH000477: Starting delayed drop of schema as part of SessionFactory shut-down'
+2017-09-30 01:53:12.247  INFO 7414 --- [RMI TCP Connection(2)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : testdb - Shutdown initiated...
+2017-09-30 01:53:12.255  INFO 7414 --- [RMI TCP Connection(2)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : testdb - Shutdown completed.
+2017-09-30 09:44:31.066  INFO 14074 --- [main] c.v.repository.BoardRepositoryTest       : Starting BoardRepositoryTest on me with PID 14074 (started by farid in /home/farid/Projects/Java/vNoticeBoard)
+2017-09-30 09:44:31.107  INFO 14074 --- [main] c.v.repository.BoardRepositoryTest       : No active profile set, falling back to default profiles: default
+2017-09-30 09:44:31.506  INFO 14074 --- [main] o.s.w.c.s.GenericWebApplicationContext   : Refreshing org.springframework.web.context.support.GenericWebApplicationContext@48974e45: startup date [Sat Sep 30 09:44:31 BDT 2017]; root of context hierarchy
+2017-09-30 09:44:33.514  INFO 14074 --- [main] com.zaxxer.hikari.HikariDataSource       : testdb - Starting...
+2017-09-30 09:44:33.601  INFO 14074 --- [main] com.zaxxer.hikari.pool.PoolBase          : testdb - Driver does not support get/set network timeout for connections. (Method org.postgresql.jdbc4.Jdbc4Connection.getNetworkTimeout() is not yet implemented.)
+2017-09-30 09:44:33.639  INFO 14074 --- [main] com.zaxxer.hikari.HikariDataSource       : testdb - Start completed.
+2017-09-30 09:44:33.744  INFO 14074 --- [main] j.LocalContainerEntityManagerFactoryBean : Building JPA container EntityManagerFactory for persistence unit 'default'
+2017-09-30 09:44:33.786  INFO 14074 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2017-09-30 09:44:33.846  INFO 14074 --- [main] org.hibernate.Version                    : HHH000412: Hibernate Core {5.2.10.Final}
+2017-09-30 09:44:33.847  INFO 14074 --- [main] org.hibernate.cfg.Environment            : HHH000206: hibernate.properties not found
+2017-09-30 09:44:33.987  INFO 14074 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+2017-09-30 09:44:34.150  INFO 14074 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL94Dialect
+2017-09-30 09:44:34.384  INFO 14074 --- [main] o.h.e.j.e.i.LobCreatorBuilderImpl        : HHH000424: Disabling contextual LOB creation as createClob() method threw error : java.lang.reflect.InvocationTargetException
+2017-09-30 09:44:34.386  INFO 14074 --- [main] org.hibernate.type.BasicTypeRegistry     : HHH000270: Type registration [java.util.UUID] overrides previous : org.hibernate.type.UUIDBinaryType@1697f2b3
+2017-09-30 09:44:35.087  WARN 14074 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2017-09-30 09:44:35.087  WARN 14074 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : constraint "uk_fipjuh5hisfppc2n34giej12x" of relation "board" does not exist, skipping
+2017-09-30 09:44:35.137  INFO 14074 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2017-09-30 09:44:36.448  INFO 14074 --- [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : Looking for @ControllerAdvice: org.springframework.web.context.support.GenericWebApplicationContext@48974e45: startup date [Sat Sep 30 09:44:31 BDT 2017]; root of context hierarchy
+2017-09-30 09:44:36.549  INFO 14074 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/{boardName}],methods=[GET]}" onto public java.lang.String com.vNoticeBoard.controller.BoardController.showBoard(java.lang.String,org.springframework.ui.Model)
+2017-09-30 09:44:36.553  INFO 14074 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/],methods=[GET]}" onto public java.lang.String com.vNoticeBoard.controller.HomeController.showHome()
+2017-09-30 09:44:36.566  INFO 14074 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2017-09-30 09:44:36.567  INFO 14074 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2017-09-30 09:44:36.640  INFO 14074 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2017-09-30 09:44:36.640  INFO 14074 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2017-09-30 09:44:36.701  INFO 14074 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2017-09-30 09:44:37.539  INFO 14074 --- [main] c.v.repository.BoardRepositoryTest       : Started BoardRepositoryTest in 6.836 seconds (JVM running for 8.568)
+2017-09-30 09:44:37.981  INFO 14074 --- [main] o.h.h.i.QueryTranslatorFactoryInitiator  : HHH000397: Using ASTQueryTranslatorFactory
+2017-09-30 09:44:38.198  INFO 14074 --- [Thread-3] o.s.w.c.s.GenericWebApplicationContext   : Closing org.springframework.web.context.support.GenericWebApplicationContext@48974e45: startup date [Sat Sep 30 09:44:31 BDT 2017]; root of context hierarchy
+2017-09-30 09:44:38.202  INFO 14074 --- [Thread-3] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2017-09-30 09:44:38.211  INFO 14074 --- [Thread-3] com.zaxxer.hikari.HikariDataSource       : testdb - Shutdown initiated...
+2017-09-30 09:44:38.229  INFO 14074 --- [Thread-3] com.zaxxer.hikari.HikariDataSource       : testdb - Shutdown completed.
+2017-09-30 10:09:52.181  INFO 15614 --- [main] c.vNoticeBoard.VNoticeBoardApplication   : Starting VNoticeBoardApplication on me with PID 15614 (/home/farid/Projects/Java/vNoticeBoard/bin started by farid in /home/farid/Projects/Java/vNoticeBoard)
+2017-09-30 10:09:52.183  INFO 15614 --- [main] c.vNoticeBoard.VNoticeBoardApplication   : No active profile set, falling back to default profiles: default
+2017-09-30 10:09:52.380  INFO 15614 --- [main] ConfigServletWebServerApplicationContext : Refreshing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@441772e: startup date [Sat Sep 30 10:09:52 BDT 2017]; root of context hierarchy
+2017-09-30 10:09:53.758  INFO 15614 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2017-09-30 10:09:53.771  INFO 15614 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2017-09-30 10:09:53.772  INFO 15614 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.20
+2017-09-30 10:09:53.851  INFO 15614 --- [localhost-startStop-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2017-09-30 10:09:53.851  INFO 15614 --- [localhost-startStop-1] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1477 ms
+2017-09-30 10:09:53.942  INFO 15614 --- [localhost-startStop-1] o.s.b.w.servlet.ServletRegistrationBean  : Mapping servlet: 'dispatcherServlet' to [/]
+2017-09-30 10:09:53.944  INFO 15614 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'characterEncodingFilter' to: [/*]
+2017-09-30 10:09:53.945  INFO 15614 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2017-09-30 10:09:53.945  INFO 15614 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2017-09-30 10:09:53.945  INFO 15614 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'requestContextFilter' to: [/*]
+2017-09-30 10:09:54.100  INFO 15614 --- [main] com.zaxxer.hikari.HikariDataSource       : testdb - Starting...
+2017-09-30 10:09:54.125  INFO 15614 --- [main] com.zaxxer.hikari.pool.PoolBase          : testdb - Driver does not support get/set network timeout for connections. (Method org.postgresql.jdbc4.Jdbc4Connection.getNetworkTimeout() is not yet implemented.)
+2017-09-30 10:09:54.138  INFO 15614 --- [main] com.zaxxer.hikari.HikariDataSource       : testdb - Start completed.
+2017-09-30 10:09:54.164  INFO 15614 --- [main] j.LocalContainerEntityManagerFactoryBean : Building JPA container EntityManagerFactory for persistence unit 'default'
+2017-09-30 10:09:54.172  INFO 15614 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2017-09-30 10:09:54.210  INFO 15614 --- [main] org.hibernate.Version                    : HHH000412: Hibernate Core {5.2.10.Final}
+2017-09-30 10:09:54.211  INFO 15614 --- [main] org.hibernate.cfg.Environment            : HHH000206: hibernate.properties not found
+2017-09-30 10:09:54.232  INFO 15614 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+2017-09-30 10:09:54.388  INFO 15614 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL94Dialect
+2017-09-30 10:09:54.474  INFO 15614 --- [main] o.h.e.j.e.i.LobCreatorBuilderImpl        : HHH000424: Disabling contextual LOB creation as createClob() method threw error : java.lang.reflect.InvocationTargetException
+2017-09-30 10:09:54.474  INFO 15614 --- [main] org.hibernate.type.BasicTypeRegistry     : HHH000270: Type registration [java.util.UUID] overrides previous : org.hibernate.type.UUIDBinaryType@2e73d5eb
+2017-09-30 10:09:54.698  WARN 15614 --- [main] o.h.t.s.i.ExceptionHandlerLoggedImpl     : GenerationTarget encountered exception accepting command : Error executing DDL via JDBC Statement
+
+org.hibernate.tool.schema.spi.CommandAcceptanceException: Error executing DDL via JDBC Statement
+	at org.hibernate.tool.schema.internal.exec.GenerationTargetToDatabase.accept(GenerationTargetToDatabase.java:67) ~[hibernate-core-5.2.10.Final.jar:5.2.10.Final]
+	at org.hibernate.tool.schema.internal.AbstractSchemaMigrator.applySqlString(AbstractSchemaMigrator.java:525) [hibernate-core-5.2.10.Final.jar:5.2.10.Final]
+	at org.hibernate.tool.schema.internal.AbstractSchemaMigrator.applySqlStrings(AbstractSchemaMigrator.java:470) [hibernate-core-5.2.10.Final.jar:5.2.10.Final]
+	at org.hibernate.tool.schema.internal.AbstractSchemaMigrator.createTable(AbstractSchemaMigrator.java:273) [hibernate-core-5.2.10.Final.jar:5.2.10.Final]
+	at org.hibernate.tool.schema.internal.GroupedSchemaMigratorImpl.performTablesMigration(GroupedSchemaMigratorImpl.java:71) ~[hibernate-core-5.2.10.Final.jar:5.2.10.Final]
+	at org.hibernate.tool.schema.internal.AbstractSchemaMigrator.performMigration(AbstractSchemaMigrator.java:203) [hibernate-core-5.2.10.Final.jar:5.2.10.Final]
+	at org.hibernate.tool.schema.internal.AbstractSchemaMigrator.doMigration(AbstractSchemaMigrator.java:110) [hibernate-core-5.2.10.Final.jar:5.2.10.Final]
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.performDatabaseAction(SchemaManagementToolCoordinator.java:183) [hibernate-core-5.2.10.Final.jar:5.2.10.Final]
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.process(SchemaManagementToolCoordinator.java:72) [hibernate-core-5.2.10.Final.jar:5.2.10.Final]
+	at org.hibernate.internal.SessionFactoryImpl.<init>(SessionFactoryImpl.java:309) [hibernate-core-5.2.10.Final.jar:5.2.10.Final]
+	at org.hibernate.boot.internal.SessionFactoryBuilderImpl.build(SessionFactoryBuilderImpl.java:452) [hibernate-core-5.2.10.Final.jar:5.2.10.Final]
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:889) [hibernate-core-5.2.10.Final.jar:5.2.10.Final]
+	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:57) [spring-orm-5.0.0.RC4.jar:5.0.0.RC4]
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:358) [spring-orm-5.0.0.RC4.jar:5.0.0.RC4]
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:384) [spring-orm-5.0.0.RC4.jar:5.0.0.RC4]
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:373) [spring-orm-5.0.0.RC4.jar:5.0.0.RC4]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1761) [spring-beans-5.0.0.RC4.jar:5.0.0.RC4]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1698) [spring-beans-5.0.0.RC4.jar:5.0.0.RC4]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:583) [spring-beans-5.0.0.RC4.jar:5.0.0.RC4]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:502) [spring-beans-5.0.0.RC4.jar:5.0.0.RC4]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:312) [spring-beans-5.0.0.RC4.jar:5.0.0.RC4]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:228) ~[spring-beans-5.0.0.RC4.jar:5.0.0.RC4]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:310) [spring-beans-5.0.0.RC4.jar:5.0.0.RC4]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200) [spring-beans-5.0.0.RC4.jar:5.0.0.RC4]
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1083) ~[spring-context-5.0.0.RC4.jar:5.0.0.RC4]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:858) ~[spring-context-5.0.0.RC4.jar:5.0.0.RC4]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:549) ~[spring-context-5.0.0.RC4.jar:5.0.0.RC4]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:122) ~[spring-boot-2.0.0.M4.jar:2.0.0.M4]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:750) ~[spring-boot-2.0.0.M4.jar:2.0.0.M4]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:386) ~[spring-boot-2.0.0.M4.jar:2.0.0.M4]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:327) ~[spring-boot-2.0.0.M4.jar:2.0.0.M4]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1245) ~[spring-boot-2.0.0.M4.jar:2.0.0.M4]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1233) ~[spring-boot-2.0.0.M4.jar:2.0.0.M4]
+	at com.vNoticeBoard.VNoticeBoardApplication.main(VNoticeBoardApplication.java:10) ~[bin/:na]
+Caused by: org.postgresql.util.PSQLException: ERROR: relation "board" already exists
+	at org.postgresql.core.v3.QueryExecutorImpl.receiveErrorResponse(QueryExecutorImpl.java:2270) ~[postgresql-9.4-1200-jdbc41.jar:9.4]
+	at org.postgresql.core.v3.QueryExecutorImpl.processResults(QueryExecutorImpl.java:1998) ~[postgresql-9.4-1200-jdbc41.jar:9.4]
+	at org.postgresql.core.v3.QueryExecutorImpl.execute(QueryExecutorImpl.java:255) ~[postgresql-9.4-1200-jdbc41.jar:9.4]
+	at org.postgresql.jdbc2.AbstractJdbc2Statement.execute(AbstractJdbc2Statement.java:570) ~[postgresql-9.4-1200-jdbc41.jar:9.4]
+	at org.postgresql.jdbc2.AbstractJdbc2Statement.executeWithFlags(AbstractJdbc2Statement.java:406) ~[postgresql-9.4-1200-jdbc41.jar:9.4]
+	at org.postgresql.jdbc2.AbstractJdbc2Statement.execute(AbstractJdbc2Statement.java:398) ~[postgresql-9.4-1200-jdbc41.jar:9.4]
+	at com.zaxxer.hikari.pool.ProxyStatement.execute(ProxyStatement.java:95) ~[HikariCP-2.7.1.jar:na]
+	at com.zaxxer.hikari.pool.HikariProxyStatement.execute(HikariProxyStatement.java) ~[HikariCP-2.7.1.jar:na]
+	at org.hibernate.tool.schema.internal.exec.GenerationTargetToDatabase.accept(GenerationTargetToDatabase.java:54) ~[hibernate-core-5.2.10.Final.jar:5.2.10.Final]
+	... 33 common frames omitted
+
+2017-09-30 10:09:54.775  INFO 15614 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2017-09-30 10:09:55.225  INFO 15614 --- [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : Looking for @ControllerAdvice: org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@441772e: startup date [Sat Sep 30 10:09:52 BDT 2017]; root of context hierarchy
+2017-09-30 10:09:55.265  INFO 15614 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/{boardName}],methods=[GET]}" onto public java.lang.String com.vNoticeBoard.controller.BoardController.showBoard(java.lang.String,org.springframework.ui.Model)
+2017-09-30 10:09:55.266  INFO 15614 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/],methods=[GET]}" onto public java.lang.String com.vNoticeBoard.controller.HomeController.showHome()
+2017-09-30 10:09:55.270  INFO 15614 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2017-09-30 10:09:55.271  INFO 15614 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2017-09-30 10:09:55.297  INFO 15614 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2017-09-30 10:09:55.297  INFO 15614 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2017-09-30 10:09:55.326  INFO 15614 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2017-09-30 10:09:55.696  INFO 15614 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Registering beans for JMX exposure on startup
+2017-09-30 10:09:55.698  INFO 15614 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Bean with name 'dataSource' has been autodetected for JMX exposure
+2017-09-30 10:09:55.702  INFO 15614 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Located MBean 'dataSource': registering with JMX server as MBean [com.zaxxer.hikari:name=dataSource,type=HikariDataSource]
+2017-09-30 10:09:55.774  INFO 15614 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http)
+2017-09-30 10:09:55.777  INFO 15614 --- [main] c.vNoticeBoard.VNoticeBoardApplication   : Started VNoticeBoardApplication in 3.862 seconds (JVM running for 4.261)
+2017-09-30 10:10:03.947  INFO 15614 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring FrameworkServlet 'dispatcherServlet'
+2017-09-30 10:10:03.947  INFO 15614 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : FrameworkServlet 'dispatcherServlet': initialization started
+2017-09-30 10:10:03.959  INFO 15614 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : FrameworkServlet 'dispatcherServlet': initialization completed in 12 ms
+2017-09-30 10:10:04.394  WARN 15614 --- [http-nio-8080-exec-1] n.n.u.t.decorators.DecoratorProcessor    : The layout:decorator/data-layout-decorator processor has been deprecated and will be removed in the next major version of the layout dialect.  Please use layout:decorate/data-layout-decorate instead to future-proof your code.  See https://github.com/ultraq/thymeleaf-layout-dialect/issues/95 for more information.
+2017-09-30 10:10:04.476  WARN 15614 --- [http-nio-8080-exec-1] n.n.u.t.expressions.ExpressionProcessor  : Fragment expression "layouts/main" is being wrapped as a Thymeleaf 3 fragment expression (~{...}) for backwards compatibility purposes.  This wrapping will be dropped in the next major version of the expression processor, so please rewrite as a Thymeleaf 3 fragment expression to future-proof your code.  See https://github.com/thymeleaf/thymeleaf/issues/451 for more information.
+2017-09-30 10:10:04.691  WARN 15614 --- [http-nio-8080-exec-1] n.n.u.t.d.TitlePatternProcessor          : The $DECORATOR_TITLE token is deprecated and will be removed in the next major version of the layout dialect.  Please use the $LAYOUT_TITLE token instead to future-proof your code.  See https://github.com/ultraq/thymeleaf-layout-dialect/issues/95 for more information.
+2017-09-30 10:10:13.899  INFO 15614 --- [http-nio-8080-exec-7] o.h.h.i.QueryTranslatorFactoryInitiator  : HHH000397: Using ASTQueryTranslatorFactory
+2017-09-30 10:19:54.146  INFO 15614 --- [RMI TCP Connection(2)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2017-09-30 10:19:54.147  INFO 15614 --- [RMI TCP Connection(2)-127.0.0.1] ConfigServletWebServerApplicationContext : Closing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@441772e: startup date [Sat Sep 30 10:09:52 BDT 2017]; root of context hierarchy
+2017-09-30 10:19:54.148  INFO 15614 --- [RMI TCP Connection(2)-127.0.0.1] o.s.j.e.a.AnnotationMBeanExporter        : Unregistering JMX-exposed beans on shutdown
+2017-09-30 10:19:54.149  INFO 15614 --- [RMI TCP Connection(2)-127.0.0.1] o.s.j.e.a.AnnotationMBeanExporter        : Unregistering JMX-exposed beans
+2017-09-30 10:19:54.150  INFO 15614 --- [RMI TCP Connection(2)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2017-09-30 10:19:54.150  INFO 15614 --- [RMI TCP Connection(2)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : testdb - Shutdown initiated...
+2017-09-30 10:19:54.161  INFO 15614 --- [RMI TCP Connection(2)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : testdb - Shutdown completed.
+2017-09-30 10:20:03.579  INFO 16369 --- [main] c.vNoticeBoard.VNoticeBoardApplication   : Starting VNoticeBoardApplication on me with PID 16369 (/home/farid/Projects/Java/vNoticeBoard/bin started by farid in /home/farid/Projects/Java/vNoticeBoard)
+2017-09-30 10:20:03.583  INFO 16369 --- [main] c.vNoticeBoard.VNoticeBoardApplication   : No active profile set, falling back to default profiles: default
+2017-09-30 10:20:03.788  INFO 16369 --- [main] ConfigServletWebServerApplicationContext : Refreshing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@441772e: startup date [Sat Sep 30 10:20:03 BDT 2017]; root of context hierarchy
+2017-09-30 10:20:04.738  INFO 16369 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2017-09-30 10:20:04.744  INFO 16369 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2017-09-30 10:20:04.745  INFO 16369 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.20
+2017-09-30 10:20:04.797  INFO 16369 --- [localhost-startStop-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2017-09-30 10:20:04.797  INFO 16369 --- [localhost-startStop-1] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1012 ms
+2017-09-30 10:20:04.879  INFO 16369 --- [localhost-startStop-1] o.s.b.w.servlet.ServletRegistrationBean  : Mapping servlet: 'dispatcherServlet' to [/]
+2017-09-30 10:20:04.882  INFO 16369 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'characterEncodingFilter' to: [/*]
+2017-09-30 10:20:04.882  INFO 16369 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2017-09-30 10:20:04.882  INFO 16369 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2017-09-30 10:20:04.882  INFO 16369 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'requestContextFilter' to: [/*]
+2017-09-30 10:20:05.019  INFO 16369 --- [main] com.zaxxer.hikari.HikariDataSource       : testdb - Starting...
+2017-09-30 10:20:05.044  INFO 16369 --- [main] com.zaxxer.hikari.pool.PoolBase          : testdb - Driver does not support get/set network timeout for connections. (Method org.postgresql.jdbc4.Jdbc4Connection.getNetworkTimeout() is not yet implemented.)
+2017-09-30 10:20:05.076  INFO 16369 --- [main] com.zaxxer.hikari.HikariDataSource       : testdb - Start completed.
+2017-09-30 10:20:05.107  INFO 16369 --- [main] j.LocalContainerEntityManagerFactoryBean : Building JPA container EntityManagerFactory for persistence unit 'default'
+2017-09-30 10:20:05.115  INFO 16369 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2017-09-30 10:20:05.158  INFO 16369 --- [main] org.hibernate.Version                    : HHH000412: Hibernate Core {5.2.10.Final}
+2017-09-30 10:20:05.159  INFO 16369 --- [main] org.hibernate.cfg.Environment            : HHH000206: hibernate.properties not found
+2017-09-30 10:20:05.181  INFO 16369 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+2017-09-30 10:20:05.342  INFO 16369 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL94Dialect
+2017-09-30 10:20:05.432  INFO 16369 --- [main] o.h.e.j.e.i.LobCreatorBuilderImpl        : HHH000424: Disabling contextual LOB creation as createClob() method threw error : java.lang.reflect.InvocationTargetException
+2017-09-30 10:20:05.434  INFO 16369 --- [main] org.hibernate.type.BasicTypeRegistry     : HHH000270: Type registration [java.util.UUID] overrides previous : org.hibernate.type.UUIDBinaryType@5ec5ea63
+2017-09-30 10:20:05.669  WARN 16369 --- [main] o.h.t.s.i.ExceptionHandlerLoggedImpl     : GenerationTarget encountered exception accepting command : Error executing DDL via JDBC Statement
+
+org.hibernate.tool.schema.spi.CommandAcceptanceException: Error executing DDL via JDBC Statement
+	at org.hibernate.tool.schema.internal.exec.GenerationTargetToDatabase.accept(GenerationTargetToDatabase.java:67) ~[hibernate-core-5.2.10.Final.jar:5.2.10.Final]
+	at org.hibernate.tool.schema.internal.AbstractSchemaMigrator.applySqlString(AbstractSchemaMigrator.java:525) [hibernate-core-5.2.10.Final.jar:5.2.10.Final]
+	at org.hibernate.tool.schema.internal.AbstractSchemaMigrator.applySqlStrings(AbstractSchemaMigrator.java:470) [hibernate-core-5.2.10.Final.jar:5.2.10.Final]
+	at org.hibernate.tool.schema.internal.AbstractSchemaMigrator.createTable(AbstractSchemaMigrator.java:273) [hibernate-core-5.2.10.Final.jar:5.2.10.Final]
+	at org.hibernate.tool.schema.internal.GroupedSchemaMigratorImpl.performTablesMigration(GroupedSchemaMigratorImpl.java:71) ~[hibernate-core-5.2.10.Final.jar:5.2.10.Final]
+	at org.hibernate.tool.schema.internal.AbstractSchemaMigrator.performMigration(AbstractSchemaMigrator.java:203) [hibernate-core-5.2.10.Final.jar:5.2.10.Final]
+	at org.hibernate.tool.schema.internal.AbstractSchemaMigrator.doMigration(AbstractSchemaMigrator.java:110) [hibernate-core-5.2.10.Final.jar:5.2.10.Final]
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.performDatabaseAction(SchemaManagementToolCoordinator.java:183) [hibernate-core-5.2.10.Final.jar:5.2.10.Final]
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.process(SchemaManagementToolCoordinator.java:72) [hibernate-core-5.2.10.Final.jar:5.2.10.Final]
+	at org.hibernate.internal.SessionFactoryImpl.<init>(SessionFactoryImpl.java:309) [hibernate-core-5.2.10.Final.jar:5.2.10.Final]
+	at org.hibernate.boot.internal.SessionFactoryBuilderImpl.build(SessionFactoryBuilderImpl.java:452) [hibernate-core-5.2.10.Final.jar:5.2.10.Final]
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:889) [hibernate-core-5.2.10.Final.jar:5.2.10.Final]
+	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:57) [spring-orm-5.0.0.RC4.jar:5.0.0.RC4]
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:358) [spring-orm-5.0.0.RC4.jar:5.0.0.RC4]
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:384) [spring-orm-5.0.0.RC4.jar:5.0.0.RC4]
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:373) [spring-orm-5.0.0.RC4.jar:5.0.0.RC4]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1761) [spring-beans-5.0.0.RC4.jar:5.0.0.RC4]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1698) [spring-beans-5.0.0.RC4.jar:5.0.0.RC4]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:583) [spring-beans-5.0.0.RC4.jar:5.0.0.RC4]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:502) [spring-beans-5.0.0.RC4.jar:5.0.0.RC4]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:312) [spring-beans-5.0.0.RC4.jar:5.0.0.RC4]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:228) ~[spring-beans-5.0.0.RC4.jar:5.0.0.RC4]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:310) [spring-beans-5.0.0.RC4.jar:5.0.0.RC4]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200) [spring-beans-5.0.0.RC4.jar:5.0.0.RC4]
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1083) ~[spring-context-5.0.0.RC4.jar:5.0.0.RC4]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:858) ~[spring-context-5.0.0.RC4.jar:5.0.0.RC4]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:549) ~[spring-context-5.0.0.RC4.jar:5.0.0.RC4]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:122) ~[spring-boot-2.0.0.M4.jar:2.0.0.M4]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:750) ~[spring-boot-2.0.0.M4.jar:2.0.0.M4]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:386) ~[spring-boot-2.0.0.M4.jar:2.0.0.M4]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:327) ~[spring-boot-2.0.0.M4.jar:2.0.0.M4]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1245) ~[spring-boot-2.0.0.M4.jar:2.0.0.M4]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1233) ~[spring-boot-2.0.0.M4.jar:2.0.0.M4]
+	at com.vNoticeBoard.VNoticeBoardApplication.main(VNoticeBoardApplication.java:10) ~[bin/:na]
+Caused by: org.postgresql.util.PSQLException: ERROR: relation "board" already exists
+	at org.postgresql.core.v3.QueryExecutorImpl.receiveErrorResponse(QueryExecutorImpl.java:2270) ~[postgresql-9.4-1200-jdbc41.jar:9.4]
+	at org.postgresql.core.v3.QueryExecutorImpl.processResults(QueryExecutorImpl.java:1998) ~[postgresql-9.4-1200-jdbc41.jar:9.4]
+	at org.postgresql.core.v3.QueryExecutorImpl.execute(QueryExecutorImpl.java:255) ~[postgresql-9.4-1200-jdbc41.jar:9.4]
+	at org.postgresql.jdbc2.AbstractJdbc2Statement.execute(AbstractJdbc2Statement.java:570) ~[postgresql-9.4-1200-jdbc41.jar:9.4]
+	at org.postgresql.jdbc2.AbstractJdbc2Statement.executeWithFlags(AbstractJdbc2Statement.java:406) ~[postgresql-9.4-1200-jdbc41.jar:9.4]
+	at org.postgresql.jdbc2.AbstractJdbc2Statement.execute(AbstractJdbc2Statement.java:398) ~[postgresql-9.4-1200-jdbc41.jar:9.4]
+	at com.zaxxer.hikari.pool.ProxyStatement.execute(ProxyStatement.java:95) ~[HikariCP-2.7.1.jar:na]
+	at com.zaxxer.hikari.pool.HikariProxyStatement.execute(HikariProxyStatement.java) ~[HikariCP-2.7.1.jar:na]
+	at org.hibernate.tool.schema.internal.exec.GenerationTargetToDatabase.accept(GenerationTargetToDatabase.java:54) ~[hibernate-core-5.2.10.Final.jar:5.2.10.Final]
+	... 33 common frames omitted
+
+2017-09-30 10:20:05.715  INFO 16369 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2017-09-30 10:20:06.154  INFO 16369 --- [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : Looking for @ControllerAdvice: org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@441772e: startup date [Sat Sep 30 10:20:03 BDT 2017]; root of context hierarchy
+2017-09-30 10:20:06.193  INFO 16369 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/{boardName}],methods=[GET]}" onto public java.lang.String com.vNoticeBoard.controller.BoardController.showBoard(java.lang.String,org.springframework.ui.Model)
+2017-09-30 10:20:06.193  INFO 16369 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/],methods=[GET]}" onto public java.lang.String com.vNoticeBoard.controller.HomeController.showHome()
+2017-09-30 10:20:06.197  INFO 16369 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2017-09-30 10:20:06.197  INFO 16369 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2017-09-30 10:20:06.225  INFO 16369 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2017-09-30 10:20:06.225  INFO 16369 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2017-09-30 10:20:06.253  INFO 16369 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2017-09-30 10:20:06.579  INFO 16369 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Registering beans for JMX exposure on startup
+2017-09-30 10:20:06.580  INFO 16369 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Bean with name 'dataSource' has been autodetected for JMX exposure
+2017-09-30 10:20:06.584  INFO 16369 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Located MBean 'dataSource': registering with JMX server as MBean [com.zaxxer.hikari:name=dataSource,type=HikariDataSource]
+2017-09-30 10:20:06.613  INFO 16369 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http)
+2017-09-30 10:20:06.615  INFO 16369 --- [main] c.vNoticeBoard.VNoticeBoardApplication   : Started VNoticeBoardApplication in 3.375 seconds (JVM running for 3.882)
+2017-09-30 10:20:32.472  INFO 16369 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring FrameworkServlet 'dispatcherServlet'
+2017-09-30 10:20:32.472  INFO 16369 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : FrameworkServlet 'dispatcherServlet': initialization started
+2017-09-30 10:20:32.482  INFO 16369 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : FrameworkServlet 'dispatcherServlet': initialization completed in 10 ms
+2017-09-30 10:20:32.520  INFO 16369 --- [http-nio-8080-exec-1] o.h.h.i.QueryTranslatorFactoryInitiator  : HHH000397: Using ASTQueryTranslatorFactory
+2017-09-30 10:20:32.792  WARN 16369 --- [http-nio-8080-exec-1] n.n.u.t.decorators.DecoratorProcessor    : The layout:decorator/data-layout-decorator processor has been deprecated and will be removed in the next major version of the layout dialect.  Please use layout:decorate/data-layout-decorate instead to future-proof your code.  See https://github.com/ultraq/thymeleaf-layout-dialect/issues/95 for more information.
+2017-09-30 10:20:32.884  WARN 16369 --- [http-nio-8080-exec-1] n.n.u.t.expressions.ExpressionProcessor  : Fragment expression "layouts/main" is being wrapped as a Thymeleaf 3 fragment expression (~{...}) for backwards compatibility purposes.  This wrapping will be dropped in the next major version of the expression processor, so please rewrite as a Thymeleaf 3 fragment expression to future-proof your code.  See https://github.com/thymeleaf/thymeleaf/issues/451 for more information.
+2017-09-30 10:20:33.044  WARN 16369 --- [http-nio-8080-exec-1] n.n.u.t.d.TitlePatternProcessor          : The $DECORATOR_TITLE token is deprecated and will be removed in the next major version of the layout dialect.  Please use the $LAYOUT_TITLE token instead to future-proof your code.  See https://github.com/ultraq/thymeleaf-layout-dialect/issues/95 for more information.
+2017-09-30 10:35:35.632  INFO 16369 --- [RMI TCP Connection(2)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2017-09-30 10:35:35.632  INFO 16369 --- [RMI TCP Connection(2)-127.0.0.1] ConfigServletWebServerApplicationContext : Closing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@441772e: startup date [Sat Sep 30 10:20:03 BDT 2017]; root of context hierarchy
+2017-09-30 10:35:35.633  INFO 16369 --- [RMI TCP Connection(2)-127.0.0.1] o.s.j.e.a.AnnotationMBeanExporter        : Unregistering JMX-exposed beans on shutdown
+2017-09-30 10:35:35.634  INFO 16369 --- [RMI TCP Connection(2)-127.0.0.1] o.s.j.e.a.AnnotationMBeanExporter        : Unregistering JMX-exposed beans
+2017-09-30 10:35:35.634  INFO 16369 --- [RMI TCP Connection(2)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2017-09-30 10:35:35.635  INFO 16369 --- [RMI TCP Connection(2)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : testdb - Shutdown initiated...
+2017-09-30 10:35:35.640  INFO 16369 --- [RMI TCP Connection(2)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : testdb - Shutdown completed.
+2017-09-30 10:35:42.847  INFO 17240 --- [main] c.vNoticeBoard.VNoticeBoardApplication   : Starting VNoticeBoardApplication on me with PID 17240 (/home/farid/Projects/Java/vNoticeBoard/bin started by farid in /home/farid/Projects/Java/vNoticeBoard)
+2017-09-30 10:35:42.849  INFO 17240 --- [main] c.vNoticeBoard.VNoticeBoardApplication   : No active profile set, falling back to default profiles: default
+2017-09-30 10:35:43.024  INFO 17240 --- [main] ConfigServletWebServerApplicationContext : Refreshing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@441772e: startup date [Sat Sep 30 10:35:43 BDT 2017]; root of context hierarchy
+2017-09-30 10:35:44.252  INFO 17240 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2017-09-30 10:35:44.260  INFO 17240 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2017-09-30 10:35:44.261  INFO 17240 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.20
+2017-09-30 10:35:44.323  INFO 17240 --- [localhost-startStop-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2017-09-30 10:35:44.324  INFO 17240 --- [localhost-startStop-1] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1303 ms
+2017-09-30 10:35:44.416  INFO 17240 --- [localhost-startStop-1] o.s.b.w.servlet.ServletRegistrationBean  : Mapping servlet: 'dispatcherServlet' to [/]
+2017-09-30 10:35:44.419  INFO 17240 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'characterEncodingFilter' to: [/*]
+2017-09-30 10:35:44.419  INFO 17240 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2017-09-30 10:35:44.419  INFO 17240 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2017-09-30 10:35:44.420  INFO 17240 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'requestContextFilter' to: [/*]
+2017-09-30 10:35:44.610  INFO 17240 --- [main] com.zaxxer.hikari.HikariDataSource       : testdb - Starting...
+2017-09-30 10:35:44.642  INFO 17240 --- [main] com.zaxxer.hikari.pool.PoolBase          : testdb - Driver does not support get/set network timeout for connections. (Method org.postgresql.jdbc4.Jdbc4Connection.getNetworkTimeout() is not yet implemented.)
+2017-09-30 10:35:44.657  INFO 17240 --- [main] com.zaxxer.hikari.HikariDataSource       : testdb - Start completed.
+2017-09-30 10:35:44.694  INFO 17240 --- [main] j.LocalContainerEntityManagerFactoryBean : Building JPA container EntityManagerFactory for persistence unit 'default'
+2017-09-30 10:35:44.703  INFO 17240 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2017-09-30 10:35:44.745  INFO 17240 --- [main] org.hibernate.Version                    : HHH000412: Hibernate Core {5.2.10.Final}
+2017-09-30 10:35:44.746  INFO 17240 --- [main] org.hibernate.cfg.Environment            : HHH000206: hibernate.properties not found
+2017-09-30 10:35:44.781  INFO 17240 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+2017-09-30 10:35:44.936  INFO 17240 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL94Dialect
+2017-09-30 10:35:45.024  INFO 17240 --- [main] o.h.e.j.e.i.LobCreatorBuilderImpl        : HHH000424: Disabling contextual LOB creation as createClob() method threw error : java.lang.reflect.InvocationTargetException
+2017-09-30 10:35:45.025  INFO 17240 --- [main] org.hibernate.type.BasicTypeRegistry     : HHH000270: Type registration [java.util.UUID] overrides previous : org.hibernate.type.UUIDBinaryType@4c86da0c
+2017-09-30 10:35:45.258  WARN 17240 --- [main] o.h.t.s.i.ExceptionHandlerLoggedImpl     : GenerationTarget encountered exception accepting command : Error executing DDL via JDBC Statement
+
+org.hibernate.tool.schema.spi.CommandAcceptanceException: Error executing DDL via JDBC Statement
+	at org.hibernate.tool.schema.internal.exec.GenerationTargetToDatabase.accept(GenerationTargetToDatabase.java:67) ~[hibernate-core-5.2.10.Final.jar:5.2.10.Final]
+	at org.hibernate.tool.schema.internal.AbstractSchemaMigrator.applySqlString(AbstractSchemaMigrator.java:525) [hibernate-core-5.2.10.Final.jar:5.2.10.Final]
+	at org.hibernate.tool.schema.internal.AbstractSchemaMigrator.applySqlStrings(AbstractSchemaMigrator.java:470) [hibernate-core-5.2.10.Final.jar:5.2.10.Final]
+	at org.hibernate.tool.schema.internal.AbstractSchemaMigrator.createTable(AbstractSchemaMigrator.java:273) [hibernate-core-5.2.10.Final.jar:5.2.10.Final]
+	at org.hibernate.tool.schema.internal.GroupedSchemaMigratorImpl.performTablesMigration(GroupedSchemaMigratorImpl.java:71) ~[hibernate-core-5.2.10.Final.jar:5.2.10.Final]
+	at org.hibernate.tool.schema.internal.AbstractSchemaMigrator.performMigration(AbstractSchemaMigrator.java:203) [hibernate-core-5.2.10.Final.jar:5.2.10.Final]
+	at org.hibernate.tool.schema.internal.AbstractSchemaMigrator.doMigration(AbstractSchemaMigrator.java:110) [hibernate-core-5.2.10.Final.jar:5.2.10.Final]
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.performDatabaseAction(SchemaManagementToolCoordinator.java:183) [hibernate-core-5.2.10.Final.jar:5.2.10.Final]
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.process(SchemaManagementToolCoordinator.java:72) [hibernate-core-5.2.10.Final.jar:5.2.10.Final]
+	at org.hibernate.internal.SessionFactoryImpl.<init>(SessionFactoryImpl.java:309) [hibernate-core-5.2.10.Final.jar:5.2.10.Final]
+	at org.hibernate.boot.internal.SessionFactoryBuilderImpl.build(SessionFactoryBuilderImpl.java:452) [hibernate-core-5.2.10.Final.jar:5.2.10.Final]
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:889) [hibernate-core-5.2.10.Final.jar:5.2.10.Final]
+	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:57) [spring-orm-5.0.0.RC4.jar:5.0.0.RC4]
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:358) [spring-orm-5.0.0.RC4.jar:5.0.0.RC4]
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:384) [spring-orm-5.0.0.RC4.jar:5.0.0.RC4]
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:373) [spring-orm-5.0.0.RC4.jar:5.0.0.RC4]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1761) [spring-beans-5.0.0.RC4.jar:5.0.0.RC4]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1698) [spring-beans-5.0.0.RC4.jar:5.0.0.RC4]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:583) [spring-beans-5.0.0.RC4.jar:5.0.0.RC4]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:502) [spring-beans-5.0.0.RC4.jar:5.0.0.RC4]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:312) [spring-beans-5.0.0.RC4.jar:5.0.0.RC4]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:228) ~[spring-beans-5.0.0.RC4.jar:5.0.0.RC4]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:310) [spring-beans-5.0.0.RC4.jar:5.0.0.RC4]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200) [spring-beans-5.0.0.RC4.jar:5.0.0.RC4]
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1083) ~[spring-context-5.0.0.RC4.jar:5.0.0.RC4]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:858) ~[spring-context-5.0.0.RC4.jar:5.0.0.RC4]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:549) ~[spring-context-5.0.0.RC4.jar:5.0.0.RC4]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:122) ~[spring-boot-2.0.0.M4.jar:2.0.0.M4]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:750) ~[spring-boot-2.0.0.M4.jar:2.0.0.M4]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:386) ~[spring-boot-2.0.0.M4.jar:2.0.0.M4]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:327) ~[spring-boot-2.0.0.M4.jar:2.0.0.M4]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1245) ~[spring-boot-2.0.0.M4.jar:2.0.0.M4]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1233) ~[spring-boot-2.0.0.M4.jar:2.0.0.M4]
+	at com.vNoticeBoard.VNoticeBoardApplication.main(VNoticeBoardApplication.java:10) ~[bin/:na]
+Caused by: org.postgresql.util.PSQLException: ERROR: relation "board" already exists
+	at org.postgresql.core.v3.QueryExecutorImpl.receiveErrorResponse(QueryExecutorImpl.java:2270) ~[postgresql-9.4-1200-jdbc41.jar:9.4]
+	at org.postgresql.core.v3.QueryExecutorImpl.processResults(QueryExecutorImpl.java:1998) ~[postgresql-9.4-1200-jdbc41.jar:9.4]
+	at org.postgresql.core.v3.QueryExecutorImpl.execute(QueryExecutorImpl.java:255) ~[postgresql-9.4-1200-jdbc41.jar:9.4]
+	at org.postgresql.jdbc2.AbstractJdbc2Statement.execute(AbstractJdbc2Statement.java:570) ~[postgresql-9.4-1200-jdbc41.jar:9.4]
+	at org.postgresql.jdbc2.AbstractJdbc2Statement.executeWithFlags(AbstractJdbc2Statement.java:406) ~[postgresql-9.4-1200-jdbc41.jar:9.4]
+	at org.postgresql.jdbc2.AbstractJdbc2Statement.execute(AbstractJdbc2Statement.java:398) ~[postgresql-9.4-1200-jdbc41.jar:9.4]
+	at com.zaxxer.hikari.pool.ProxyStatement.execute(ProxyStatement.java:95) ~[HikariCP-2.7.1.jar:na]
+	at com.zaxxer.hikari.pool.HikariProxyStatement.execute(HikariProxyStatement.java) ~[HikariCP-2.7.1.jar:na]
+	at org.hibernate.tool.schema.internal.exec.GenerationTargetToDatabase.accept(GenerationTargetToDatabase.java:54) ~[hibernate-core-5.2.10.Final.jar:5.2.10.Final]
+	... 33 common frames omitted
+
+2017-09-30 10:35:45.309  INFO 17240 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2017-09-30 10:35:45.813  INFO 17240 --- [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : Looking for @ControllerAdvice: org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@441772e: startup date [Sat Sep 30 10:35:43 BDT 2017]; root of context hierarchy
+2017-09-30 10:35:45.857  INFO 17240 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/{boardName}],methods=[GET]}" onto public java.lang.String com.vNoticeBoard.controller.BoardController.showBoard(java.lang.String,org.springframework.ui.Model)
+2017-09-30 10:35:45.858  INFO 17240 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/register],methods=[POST]}" onto public java.lang.String com.vNoticeBoard.controller.BoardController.registerBoard(com.vNoticeBoard.dto.RegistrationForm,org.springframework.validation.BindingResult,org.springframework.web.context.request.WebRequest,org.springframework.web.servlet.mvc.support.RedirectAttributes)
+2017-09-30 10:35:45.858  INFO 17240 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/],methods=[GET]}" onto public java.lang.String com.vNoticeBoard.controller.HomeController.showHome()
+2017-09-30 10:35:45.862  INFO 17240 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2017-09-30 10:35:45.863  INFO 17240 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2017-09-30 10:35:45.893  INFO 17240 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2017-09-30 10:35:45.893  INFO 17240 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2017-09-30 10:35:45.927  INFO 17240 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2017-09-30 10:35:46.289  INFO 17240 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Registering beans for JMX exposure on startup
+2017-09-30 10:35:46.291  INFO 17240 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Bean with name 'dataSource' has been autodetected for JMX exposure
+2017-09-30 10:35:46.295  INFO 17240 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Located MBean 'dataSource': registering with JMX server as MBean [com.zaxxer.hikari:name=dataSource,type=HikariDataSource]
+2017-09-30 10:35:46.325  INFO 17240 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http)
+2017-09-30 10:35:46.328  INFO 17240 --- [main] c.vNoticeBoard.VNoticeBoardApplication   : Started VNoticeBoardApplication in 3.772 seconds (JVM running for 4.188)
+2017-09-30 10:36:04.514  INFO 17240 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring FrameworkServlet 'dispatcherServlet'
+2017-09-30 10:36:04.514  INFO 17240 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : FrameworkServlet 'dispatcherServlet': initialization started
+2017-09-30 10:36:04.523  INFO 17240 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : FrameworkServlet 'dispatcherServlet': initialization completed in 8 ms
+2017-09-30 10:36:04.561  INFO 17240 --- [http-nio-8080-exec-1] o.h.h.i.QueryTranslatorFactoryInitiator  : HHH000397: Using ASTQueryTranslatorFactory
+2017-09-30 10:36:04.826  WARN 17240 --- [http-nio-8080-exec-1] n.n.u.t.decorators.DecoratorProcessor    : The layout:decorator/data-layout-decorator processor has been deprecated and will be removed in the next major version of the layout dialect.  Please use layout:decorate/data-layout-decorate instead to future-proof your code.  See https://github.com/ultraq/thymeleaf-layout-dialect/issues/95 for more information.
+2017-09-30 10:36:04.885  WARN 17240 --- [http-nio-8080-exec-1] n.n.u.t.expressions.ExpressionProcessor  : Fragment expression "layouts/main" is being wrapped as a Thymeleaf 3 fragment expression (~{...}) for backwards compatibility purposes.  This wrapping will be dropped in the next major version of the expression processor, so please rewrite as a Thymeleaf 3 fragment expression to future-proof your code.  See https://github.com/thymeleaf/thymeleaf/issues/451 for more information.
+2017-09-30 10:36:05.032  WARN 17240 --- [http-nio-8080-exec-1] n.n.u.t.d.TitlePatternProcessor          : The $DECORATOR_TITLE token is deprecated and will be removed in the next major version of the layout dialect.  Please use the $LAYOUT_TITLE token instead to future-proof your code.  See https://github.com/ultraq/thymeleaf-layout-dialect/issues/95 for more information.
+2017-09-30 10:57:21.442  INFO 17240 --- [RMI TCP Connection(2)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2017-09-30 10:57:21.442  INFO 17240 --- [RMI TCP Connection(2)-127.0.0.1] ConfigServletWebServerApplicationContext : Closing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@441772e: startup date [Sat Sep 30 10:35:43 BDT 2017]; root of context hierarchy
+2017-09-30 10:57:21.444  INFO 17240 --- [RMI TCP Connection(2)-127.0.0.1] o.s.j.e.a.AnnotationMBeanExporter        : Unregistering JMX-exposed beans on shutdown
+2017-09-30 10:57:21.444  INFO 17240 --- [RMI TCP Connection(2)-127.0.0.1] o.s.j.e.a.AnnotationMBeanExporter        : Unregistering JMX-exposed beans
+2017-09-30 10:57:21.445  INFO 17240 --- [RMI TCP Connection(2)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2017-09-30 10:57:21.446  INFO 17240 --- [RMI TCP Connection(2)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : testdb - Shutdown initiated...
+2017-09-30 10:57:21.457  INFO 17240 --- [RMI TCP Connection(2)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : testdb - Shutdown completed.
+2017-09-30 10:57:27.590  INFO 18152 --- [main] c.vNoticeBoard.VNoticeBoardApplication   : Starting VNoticeBoardApplication on me with PID 18152 (/home/farid/Projects/Java/vNoticeBoard/bin started by farid in /home/farid/Projects/Java/vNoticeBoard)
+2017-09-30 10:57:27.594  INFO 18152 --- [main] c.vNoticeBoard.VNoticeBoardApplication   : No active profile set, falling back to default profiles: default
+2017-09-30 10:57:27.773  INFO 18152 --- [main] ConfigServletWebServerApplicationContext : Refreshing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@441772e: startup date [Sat Sep 30 10:57:27 BDT 2017]; root of context hierarchy
+2017-09-30 10:57:28.869  INFO 18152 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2017-09-30 10:57:28.879  INFO 18152 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2017-09-30 10:57:28.880  INFO 18152 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.20
+2017-09-30 10:57:28.967  INFO 18152 --- [localhost-startStop-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2017-09-30 10:57:28.968  INFO 18152 --- [localhost-startStop-1] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1200 ms
+2017-09-30 10:57:29.044  INFO 18152 --- [localhost-startStop-1] o.s.b.w.servlet.ServletRegistrationBean  : Mapping servlet: 'dispatcherServlet' to [/]
+2017-09-30 10:57:29.047  INFO 18152 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'characterEncodingFilter' to: [/*]
+2017-09-30 10:57:29.048  INFO 18152 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2017-09-30 10:57:29.048  INFO 18152 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2017-09-30 10:57:29.048  INFO 18152 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'requestContextFilter' to: [/*]
+2017-09-30 10:57:29.200  INFO 18152 --- [main] com.zaxxer.hikari.HikariDataSource       : testdb - Starting...
+2017-09-30 10:57:29.231  INFO 18152 --- [main] com.zaxxer.hikari.pool.PoolBase          : testdb - Driver does not support get/set network timeout for connections. (Method org.postgresql.jdbc4.Jdbc4Connection.getNetworkTimeout() is not yet implemented.)
+2017-09-30 10:57:29.245  INFO 18152 --- [main] com.zaxxer.hikari.HikariDataSource       : testdb - Start completed.
+2017-09-30 10:57:29.277  INFO 18152 --- [main] j.LocalContainerEntityManagerFactoryBean : Building JPA container EntityManagerFactory for persistence unit 'default'
+2017-09-30 10:57:29.286  INFO 18152 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2017-09-30 10:57:29.330  INFO 18152 --- [main] org.hibernate.Version                    : HHH000412: Hibernate Core {5.2.10.Final}
+2017-09-30 10:57:29.331  INFO 18152 --- [main] org.hibernate.cfg.Environment            : HHH000206: hibernate.properties not found
+2017-09-30 10:57:29.360  INFO 18152 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+2017-09-30 10:57:29.541  INFO 18152 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL94Dialect
+2017-09-30 10:57:29.631  INFO 18152 --- [main] o.h.e.j.e.i.LobCreatorBuilderImpl        : HHH000424: Disabling contextual LOB creation as createClob() method threw error : java.lang.reflect.InvocationTargetException
+2017-09-30 10:57:29.632  INFO 18152 --- [main] org.hibernate.type.BasicTypeRegistry     : HHH000270: Type registration [java.util.UUID] overrides previous : org.hibernate.type.UUIDBinaryType@5c83ae01
+2017-09-30 10:57:29.869  WARN 18152 --- [main] o.h.t.s.i.ExceptionHandlerLoggedImpl     : GenerationTarget encountered exception accepting command : Error executing DDL via JDBC Statement
+
+org.hibernate.tool.schema.spi.CommandAcceptanceException: Error executing DDL via JDBC Statement
+	at org.hibernate.tool.schema.internal.exec.GenerationTargetToDatabase.accept(GenerationTargetToDatabase.java:67) ~[hibernate-core-5.2.10.Final.jar:5.2.10.Final]
+	at org.hibernate.tool.schema.internal.AbstractSchemaMigrator.applySqlString(AbstractSchemaMigrator.java:525) [hibernate-core-5.2.10.Final.jar:5.2.10.Final]
+	at org.hibernate.tool.schema.internal.AbstractSchemaMigrator.applySqlStrings(AbstractSchemaMigrator.java:470) [hibernate-core-5.2.10.Final.jar:5.2.10.Final]
+	at org.hibernate.tool.schema.internal.AbstractSchemaMigrator.createTable(AbstractSchemaMigrator.java:273) [hibernate-core-5.2.10.Final.jar:5.2.10.Final]
+	at org.hibernate.tool.schema.internal.GroupedSchemaMigratorImpl.performTablesMigration(GroupedSchemaMigratorImpl.java:71) ~[hibernate-core-5.2.10.Final.jar:5.2.10.Final]
+	at org.hibernate.tool.schema.internal.AbstractSchemaMigrator.performMigration(AbstractSchemaMigrator.java:203) [hibernate-core-5.2.10.Final.jar:5.2.10.Final]
+	at org.hibernate.tool.schema.internal.AbstractSchemaMigrator.doMigration(AbstractSchemaMigrator.java:110) [hibernate-core-5.2.10.Final.jar:5.2.10.Final]
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.performDatabaseAction(SchemaManagementToolCoordinator.java:183) [hibernate-core-5.2.10.Final.jar:5.2.10.Final]
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.process(SchemaManagementToolCoordinator.java:72) [hibernate-core-5.2.10.Final.jar:5.2.10.Final]
+	at org.hibernate.internal.SessionFactoryImpl.<init>(SessionFactoryImpl.java:309) [hibernate-core-5.2.10.Final.jar:5.2.10.Final]
+	at org.hibernate.boot.internal.SessionFactoryBuilderImpl.build(SessionFactoryBuilderImpl.java:452) [hibernate-core-5.2.10.Final.jar:5.2.10.Final]
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:889) [hibernate-core-5.2.10.Final.jar:5.2.10.Final]
+	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:57) [spring-orm-5.0.0.RC4.jar:5.0.0.RC4]
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:358) [spring-orm-5.0.0.RC4.jar:5.0.0.RC4]
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:384) [spring-orm-5.0.0.RC4.jar:5.0.0.RC4]
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:373) [spring-orm-5.0.0.RC4.jar:5.0.0.RC4]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1761) [spring-beans-5.0.0.RC4.jar:5.0.0.RC4]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1698) [spring-beans-5.0.0.RC4.jar:5.0.0.RC4]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:583) [spring-beans-5.0.0.RC4.jar:5.0.0.RC4]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:502) [spring-beans-5.0.0.RC4.jar:5.0.0.RC4]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:312) [spring-beans-5.0.0.RC4.jar:5.0.0.RC4]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:228) ~[spring-beans-5.0.0.RC4.jar:5.0.0.RC4]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:310) [spring-beans-5.0.0.RC4.jar:5.0.0.RC4]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200) [spring-beans-5.0.0.RC4.jar:5.0.0.RC4]
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1083) ~[spring-context-5.0.0.RC4.jar:5.0.0.RC4]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:858) ~[spring-context-5.0.0.RC4.jar:5.0.0.RC4]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:549) ~[spring-context-5.0.0.RC4.jar:5.0.0.RC4]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:122) ~[spring-boot-2.0.0.M4.jar:2.0.0.M4]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:750) ~[spring-boot-2.0.0.M4.jar:2.0.0.M4]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:386) ~[spring-boot-2.0.0.M4.jar:2.0.0.M4]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:327) ~[spring-boot-2.0.0.M4.jar:2.0.0.M4]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1245) ~[spring-boot-2.0.0.M4.jar:2.0.0.M4]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1233) ~[spring-boot-2.0.0.M4.jar:2.0.0.M4]
+	at com.vNoticeBoard.VNoticeBoardApplication.main(VNoticeBoardApplication.java:10) ~[bin/:na]
+Caused by: org.postgresql.util.PSQLException: ERROR: relation "board" already exists
+	at org.postgresql.core.v3.QueryExecutorImpl.receiveErrorResponse(QueryExecutorImpl.java:2270) ~[postgresql-9.4-1200-jdbc41.jar:9.4]
+	at org.postgresql.core.v3.QueryExecutorImpl.processResults(QueryExecutorImpl.java:1998) ~[postgresql-9.4-1200-jdbc41.jar:9.4]
+	at org.postgresql.core.v3.QueryExecutorImpl.execute(QueryExecutorImpl.java:255) ~[postgresql-9.4-1200-jdbc41.jar:9.4]
+	at org.postgresql.jdbc2.AbstractJdbc2Statement.execute(AbstractJdbc2Statement.java:570) ~[postgresql-9.4-1200-jdbc41.jar:9.4]
+	at org.postgresql.jdbc2.AbstractJdbc2Statement.executeWithFlags(AbstractJdbc2Statement.java:406) ~[postgresql-9.4-1200-jdbc41.jar:9.4]
+	at org.postgresql.jdbc2.AbstractJdbc2Statement.execute(AbstractJdbc2Statement.java:398) ~[postgresql-9.4-1200-jdbc41.jar:9.4]
+	at com.zaxxer.hikari.pool.ProxyStatement.execute(ProxyStatement.java:95) ~[HikariCP-2.7.1.jar:na]
+	at com.zaxxer.hikari.pool.HikariProxyStatement.execute(HikariProxyStatement.java) ~[HikariCP-2.7.1.jar:na]
+	at org.hibernate.tool.schema.internal.exec.GenerationTargetToDatabase.accept(GenerationTargetToDatabase.java:54) ~[hibernate-core-5.2.10.Final.jar:5.2.10.Final]
+	... 33 common frames omitted
+
+2017-09-30 10:57:29.917  INFO 18152 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2017-09-30 10:57:30.418  INFO 18152 --- [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : Looking for @ControllerAdvice: org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@441772e: startup date [Sat Sep 30 10:57:27 BDT 2017]; root of context hierarchy
+2017-09-30 10:57:30.463  INFO 18152 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/{boardName}],methods=[GET]}" onto public java.lang.String com.vNoticeBoard.controller.BoardController.showBoard(java.lang.String,org.springframework.ui.Model)
+2017-09-30 10:57:30.464  INFO 18152 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/{boardName}/edit],methods=[POST]}" onto public java.lang.String com.vNoticeBoard.controller.BoardController.doEditBoard(java.lang.String,org.springframework.web.context.request.WebRequest,org.springframework.web.servlet.mvc.support.RedirectAttributes,org.springframework.ui.Model)
+2017-09-30 10:57:30.464  INFO 18152 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/register],methods=[POST]}" onto public java.lang.String com.vNoticeBoard.controller.BoardController.registerBoard(com.vNoticeBoard.dto.RegistrationForm,org.springframework.validation.BindingResult,org.springframework.web.context.request.WebRequest,org.springframework.web.servlet.mvc.support.RedirectAttributes)
+2017-09-30 10:57:30.465  INFO 18152 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/],methods=[GET]}" onto public java.lang.String com.vNoticeBoard.controller.HomeController.showHome()
+2017-09-30 10:57:30.469  INFO 18152 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2017-09-30 10:57:30.470  INFO 18152 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2017-09-30 10:57:30.495  INFO 18152 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2017-09-30 10:57:30.495  INFO 18152 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2017-09-30 10:57:30.526  INFO 18152 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2017-09-30 10:57:30.893  INFO 18152 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Registering beans for JMX exposure on startup
+2017-09-30 10:57:30.894  INFO 18152 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Bean with name 'dataSource' has been autodetected for JMX exposure
+2017-09-30 10:57:30.899  INFO 18152 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Located MBean 'dataSource': registering with JMX server as MBean [com.zaxxer.hikari:name=dataSource,type=HikariDataSource]
+2017-09-30 10:57:30.930  INFO 18152 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http)
+2017-09-30 10:57:30.934  INFO 18152 --- [main] c.vNoticeBoard.VNoticeBoardApplication   : Started VNoticeBoardApplication in 3.624 seconds (JVM running for 4.033)
+2017-09-30 10:57:43.800  INFO 18152 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring FrameworkServlet 'dispatcherServlet'
+2017-09-30 10:57:43.801  INFO 18152 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : FrameworkServlet 'dispatcherServlet': initialization started
+2017-09-30 10:57:43.813  INFO 18152 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : FrameworkServlet 'dispatcherServlet': initialization completed in 12 ms
+2017-09-30 10:57:43.857  INFO 18152 --- [http-nio-8080-exec-1] o.h.h.i.QueryTranslatorFactoryInitiator  : HHH000397: Using ASTQueryTranslatorFactory
+2017-09-30 10:57:44.159  WARN 18152 --- [http-nio-8080-exec-1] n.n.u.t.decorators.DecoratorProcessor    : The layout:decorator/data-layout-decorator processor has been deprecated and will be removed in the next major version of the layout dialect.  Please use layout:decorate/data-layout-decorate instead to future-proof your code.  See https://github.com/ultraq/thymeleaf-layout-dialect/issues/95 for more information.
+2017-09-30 10:57:44.239  WARN 18152 --- [http-nio-8080-exec-1] n.n.u.t.expressions.ExpressionProcessor  : Fragment expression "layouts/main" is being wrapped as a Thymeleaf 3 fragment expression (~{...}) for backwards compatibility purposes.  This wrapping will be dropped in the next major version of the expression processor, so please rewrite as a Thymeleaf 3 fragment expression to future-proof your code.  See https://github.com/thymeleaf/thymeleaf/issues/451 for more information.
+2017-09-30 10:57:44.419  WARN 18152 --- [http-nio-8080-exec-1] n.n.u.t.d.TitlePatternProcessor          : The $DECORATOR_TITLE token is deprecated and will be removed in the next major version of the layout dialect.  Please use the $LAYOUT_TITLE token instead to future-proof your code.  See https://github.com/ultraq/thymeleaf-layout-dialect/issues/95 for more information.
+2017-09-30 10:58:05.349  WARN 18152 --- [http-nio-8080-exec-9] o.s.web.servlet.PageNotFound             : Request method 'GET' not supported
+2017-09-30 11:00:04.991  INFO 18152 --- [RMI TCP Connection(2)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2017-09-30 11:00:04.991  INFO 18152 --- [RMI TCP Connection(2)-127.0.0.1] ConfigServletWebServerApplicationContext : Closing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@441772e: startup date [Sat Sep 30 10:57:27 BDT 2017]; root of context hierarchy
+2017-09-30 11:00:04.992  INFO 18152 --- [RMI TCP Connection(2)-127.0.0.1] o.s.j.e.a.AnnotationMBeanExporter        : Unregistering JMX-exposed beans on shutdown
+2017-09-30 11:00:04.993  INFO 18152 --- [RMI TCP Connection(2)-127.0.0.1] o.s.j.e.a.AnnotationMBeanExporter        : Unregistering JMX-exposed beans
+2017-09-30 11:00:04.994  INFO 18152 --- [RMI TCP Connection(2)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2017-09-30 11:00:04.994  INFO 18152 --- [RMI TCP Connection(2)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : testdb - Shutdown initiated...
+2017-09-30 11:00:05.008  INFO 18152 --- [RMI TCP Connection(2)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : testdb - Shutdown completed.
+2017-09-30 11:00:12.084  INFO 18386 --- [main] c.vNoticeBoard.VNoticeBoardApplication   : Starting VNoticeBoardApplication on me with PID 18386 (/home/farid/Projects/Java/vNoticeBoard/bin started by farid in /home/farid/Projects/Java/vNoticeBoard)
+2017-09-30 11:00:12.086  INFO 18386 --- [main] c.vNoticeBoard.VNoticeBoardApplication   : No active profile set, falling back to default profiles: default
+2017-09-30 11:00:12.257  INFO 18386 --- [main] ConfigServletWebServerApplicationContext : Refreshing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@441772e: startup date [Sat Sep 30 11:00:12 BDT 2017]; root of context hierarchy
+2017-09-30 11:00:13.391  INFO 18386 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2017-09-30 11:00:13.402  INFO 18386 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2017-09-30 11:00:13.403  INFO 18386 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.20
+2017-09-30 11:00:13.490  INFO 18386 --- [localhost-startStop-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2017-09-30 11:00:13.491  INFO 18386 --- [localhost-startStop-1] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1238 ms
+2017-09-30 11:00:13.576  INFO 18386 --- [localhost-startStop-1] o.s.b.w.servlet.ServletRegistrationBean  : Mapping servlet: 'dispatcherServlet' to [/]
+2017-09-30 11:00:13.579  INFO 18386 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'characterEncodingFilter' to: [/*]
+2017-09-30 11:00:13.580  INFO 18386 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2017-09-30 11:00:13.580  INFO 18386 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2017-09-30 11:00:13.580  INFO 18386 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'requestContextFilter' to: [/*]
+2017-09-30 11:00:13.739  INFO 18386 --- [main] com.zaxxer.hikari.HikariDataSource       : testdb - Starting...
+2017-09-30 11:00:13.770  INFO 18386 --- [main] com.zaxxer.hikari.pool.PoolBase          : testdb - Driver does not support get/set network timeout for connections. (Method org.postgresql.jdbc4.Jdbc4Connection.getNetworkTimeout() is not yet implemented.)
+2017-09-30 11:00:13.787  INFO 18386 --- [main] com.zaxxer.hikari.HikariDataSource       : testdb - Start completed.
+2017-09-30 11:00:13.824  INFO 18386 --- [main] j.LocalContainerEntityManagerFactoryBean : Building JPA container EntityManagerFactory for persistence unit 'default'
+2017-09-30 11:00:13.835  INFO 18386 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2017-09-30 11:00:13.884  INFO 18386 --- [main] org.hibernate.Version                    : HHH000412: Hibernate Core {5.2.10.Final}
+2017-09-30 11:00:13.886  INFO 18386 --- [main] org.hibernate.cfg.Environment            : HHH000206: hibernate.properties not found
+2017-09-30 11:00:13.934  INFO 18386 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+2017-09-30 11:00:14.159  INFO 18386 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL94Dialect
+2017-09-30 11:00:14.361  INFO 18386 --- [main] o.h.e.j.e.i.LobCreatorBuilderImpl        : HHH000424: Disabling contextual LOB creation as createClob() method threw error : java.lang.reflect.InvocationTargetException
+2017-09-30 11:00:14.362  INFO 18386 --- [main] org.hibernate.type.BasicTypeRegistry     : HHH000270: Type registration [java.util.UUID] overrides previous : org.hibernate.type.UUIDBinaryType@4190bc8a
+2017-09-30 11:00:14.635  WARN 18386 --- [main] o.h.t.s.i.ExceptionHandlerLoggedImpl     : GenerationTarget encountered exception accepting command : Error executing DDL via JDBC Statement
+
+org.hibernate.tool.schema.spi.CommandAcceptanceException: Error executing DDL via JDBC Statement
+	at org.hibernate.tool.schema.internal.exec.GenerationTargetToDatabase.accept(GenerationTargetToDatabase.java:67) ~[hibernate-core-5.2.10.Final.jar:5.2.10.Final]
+	at org.hibernate.tool.schema.internal.AbstractSchemaMigrator.applySqlString(AbstractSchemaMigrator.java:525) [hibernate-core-5.2.10.Final.jar:5.2.10.Final]
+	at org.hibernate.tool.schema.internal.AbstractSchemaMigrator.applySqlStrings(AbstractSchemaMigrator.java:470) [hibernate-core-5.2.10.Final.jar:5.2.10.Final]
+	at org.hibernate.tool.schema.internal.AbstractSchemaMigrator.createTable(AbstractSchemaMigrator.java:273) [hibernate-core-5.2.10.Final.jar:5.2.10.Final]
+	at org.hibernate.tool.schema.internal.GroupedSchemaMigratorImpl.performTablesMigration(GroupedSchemaMigratorImpl.java:71) ~[hibernate-core-5.2.10.Final.jar:5.2.10.Final]
+	at org.hibernate.tool.schema.internal.AbstractSchemaMigrator.performMigration(AbstractSchemaMigrator.java:203) [hibernate-core-5.2.10.Final.jar:5.2.10.Final]
+	at org.hibernate.tool.schema.internal.AbstractSchemaMigrator.doMigration(AbstractSchemaMigrator.java:110) [hibernate-core-5.2.10.Final.jar:5.2.10.Final]
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.performDatabaseAction(SchemaManagementToolCoordinator.java:183) [hibernate-core-5.2.10.Final.jar:5.2.10.Final]
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.process(SchemaManagementToolCoordinator.java:72) [hibernate-core-5.2.10.Final.jar:5.2.10.Final]
+	at org.hibernate.internal.SessionFactoryImpl.<init>(SessionFactoryImpl.java:309) [hibernate-core-5.2.10.Final.jar:5.2.10.Final]
+	at org.hibernate.boot.internal.SessionFactoryBuilderImpl.build(SessionFactoryBuilderImpl.java:452) [hibernate-core-5.2.10.Final.jar:5.2.10.Final]
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:889) [hibernate-core-5.2.10.Final.jar:5.2.10.Final]
+	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:57) [spring-orm-5.0.0.RC4.jar:5.0.0.RC4]
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:358) [spring-orm-5.0.0.RC4.jar:5.0.0.RC4]
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:384) [spring-orm-5.0.0.RC4.jar:5.0.0.RC4]
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:373) [spring-orm-5.0.0.RC4.jar:5.0.0.RC4]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1761) [spring-beans-5.0.0.RC4.jar:5.0.0.RC4]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1698) [spring-beans-5.0.0.RC4.jar:5.0.0.RC4]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:583) [spring-beans-5.0.0.RC4.jar:5.0.0.RC4]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:502) [spring-beans-5.0.0.RC4.jar:5.0.0.RC4]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:312) [spring-beans-5.0.0.RC4.jar:5.0.0.RC4]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:228) ~[spring-beans-5.0.0.RC4.jar:5.0.0.RC4]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:310) [spring-beans-5.0.0.RC4.jar:5.0.0.RC4]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200) [spring-beans-5.0.0.RC4.jar:5.0.0.RC4]
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1083) ~[spring-context-5.0.0.RC4.jar:5.0.0.RC4]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:858) ~[spring-context-5.0.0.RC4.jar:5.0.0.RC4]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:549) ~[spring-context-5.0.0.RC4.jar:5.0.0.RC4]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:122) ~[spring-boot-2.0.0.M4.jar:2.0.0.M4]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:750) ~[spring-boot-2.0.0.M4.jar:2.0.0.M4]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:386) ~[spring-boot-2.0.0.M4.jar:2.0.0.M4]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:327) ~[spring-boot-2.0.0.M4.jar:2.0.0.M4]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1245) ~[spring-boot-2.0.0.M4.jar:2.0.0.M4]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1233) ~[spring-boot-2.0.0.M4.jar:2.0.0.M4]
+	at com.vNoticeBoard.VNoticeBoardApplication.main(VNoticeBoardApplication.java:10) ~[bin/:na]
+Caused by: org.postgresql.util.PSQLException: ERROR: relation "board" already exists
+	at org.postgresql.core.v3.QueryExecutorImpl.receiveErrorResponse(QueryExecutorImpl.java:2270) ~[postgresql-9.4-1200-jdbc41.jar:9.4]
+	at org.postgresql.core.v3.QueryExecutorImpl.processResults(QueryExecutorImpl.java:1998) ~[postgresql-9.4-1200-jdbc41.jar:9.4]
+	at org.postgresql.core.v3.QueryExecutorImpl.execute(QueryExecutorImpl.java:255) ~[postgresql-9.4-1200-jdbc41.jar:9.4]
+	at org.postgresql.jdbc2.AbstractJdbc2Statement.execute(AbstractJdbc2Statement.java:570) ~[postgresql-9.4-1200-jdbc41.jar:9.4]
+	at org.postgresql.jdbc2.AbstractJdbc2Statement.executeWithFlags(AbstractJdbc2Statement.java:406) ~[postgresql-9.4-1200-jdbc41.jar:9.4]
+	at org.postgresql.jdbc2.AbstractJdbc2Statement.execute(AbstractJdbc2Statement.java:398) ~[postgresql-9.4-1200-jdbc41.jar:9.4]
+	at com.zaxxer.hikari.pool.ProxyStatement.execute(ProxyStatement.java:95) ~[HikariCP-2.7.1.jar:na]
+	at com.zaxxer.hikari.pool.HikariProxyStatement.execute(HikariProxyStatement.java) ~[HikariCP-2.7.1.jar:na]
+	at org.hibernate.tool.schema.internal.exec.GenerationTargetToDatabase.accept(GenerationTargetToDatabase.java:54) ~[hibernate-core-5.2.10.Final.jar:5.2.10.Final]
+	... 33 common frames omitted
+
+2017-09-30 11:00:14.684  INFO 18386 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2017-09-30 11:00:15.226  INFO 18386 --- [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : Looking for @ControllerAdvice: org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@441772e: startup date [Sat Sep 30 11:00:12 BDT 2017]; root of context hierarchy
+2017-09-30 11:00:15.281  INFO 18386 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/{boardName}],methods=[GET]}" onto public java.lang.String com.vNoticeBoard.controller.BoardController.showBoard(java.lang.String,org.springframework.ui.Model)
+2017-09-30 11:00:15.282  INFO 18386 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/{boardName}/edit],methods=[GET]}" onto public java.lang.String com.vNoticeBoard.controller.BoardController.editBoard(java.lang.String,org.springframework.ui.Model)
+2017-09-30 11:00:15.283  INFO 18386 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/{boardName}/edit],methods=[POST]}" onto public java.lang.String com.vNoticeBoard.controller.BoardController.doEditBoard(java.lang.String,org.springframework.web.context.request.WebRequest,org.springframework.web.servlet.mvc.support.RedirectAttributes,org.springframework.ui.Model)
+2017-09-30 11:00:15.283  INFO 18386 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/register],methods=[POST]}" onto public java.lang.String com.vNoticeBoard.controller.BoardController.registerBoard(com.vNoticeBoard.dto.RegistrationForm,org.springframework.validation.BindingResult,org.springframework.web.context.request.WebRequest,org.springframework.web.servlet.mvc.support.RedirectAttributes)
+2017-09-30 11:00:15.284  INFO 18386 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/],methods=[GET]}" onto public java.lang.String com.vNoticeBoard.controller.HomeController.showHome()
+2017-09-30 11:00:15.292  INFO 18386 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2017-09-30 11:00:15.292  INFO 18386 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2017-09-30 11:00:15.326  INFO 18386 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2017-09-30 11:00:15.326  INFO 18386 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2017-09-30 11:00:15.373  INFO 18386 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2017-09-30 11:00:15.780  INFO 18386 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Registering beans for JMX exposure on startup
+2017-09-30 11:00:15.781  INFO 18386 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Bean with name 'dataSource' has been autodetected for JMX exposure
+2017-09-30 11:00:15.787  INFO 18386 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Located MBean 'dataSource': registering with JMX server as MBean [com.zaxxer.hikari:name=dataSource,type=HikariDataSource]
+2017-09-30 11:00:15.824  INFO 18386 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http)
+2017-09-30 11:00:15.827  INFO 18386 --- [main] c.vNoticeBoard.VNoticeBoardApplication   : Started VNoticeBoardApplication in 4.057 seconds (JVM running for 4.666)
+2017-09-30 11:00:26.168  INFO 18386 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring FrameworkServlet 'dispatcherServlet'
+2017-09-30 11:00:26.168  INFO 18386 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : FrameworkServlet 'dispatcherServlet': initialization started
+2017-09-30 11:00:26.183  INFO 18386 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : FrameworkServlet 'dispatcherServlet': initialization completed in 14 ms
+2017-09-30 11:00:26.400  WARN 18386 --- [http-nio-8080-exec-1] n.n.u.t.decorators.DecoratorProcessor    : The layout:decorator/data-layout-decorator processor has been deprecated and will be removed in the next major version of the layout dialect.  Please use layout:decorate/data-layout-decorate instead to future-proof your code.  See https://github.com/ultraq/thymeleaf-layout-dialect/issues/95 for more information.
+2017-09-30 11:00:26.476  WARN 18386 --- [http-nio-8080-exec-1] n.n.u.t.expressions.ExpressionProcessor  : Fragment expression "layouts/main" is being wrapped as a Thymeleaf 3 fragment expression (~{...}) for backwards compatibility purposes.  This wrapping will be dropped in the next major version of the expression processor, so please rewrite as a Thymeleaf 3 fragment expression to future-proof your code.  See https://github.com/thymeleaf/thymeleaf/issues/451 for more information.
+2017-09-30 11:00:26.640  WARN 18386 --- [http-nio-8080-exec-1] n.n.u.t.d.TitlePatternProcessor          : The $DECORATOR_TITLE token is deprecated and will be removed in the next major version of the layout dialect.  Please use the $LAYOUT_TITLE token instead to future-proof your code.  See https://github.com/ultraq/thymeleaf-layout-dialect/issues/95 for more information.
+2017-09-30 11:00:36.101  INFO 18386 --- [http-nio-8080-exec-4] o.h.h.i.QueryTranslatorFactoryInitiator  : HHH000397: Using ASTQueryTranslatorFactory
+2017-09-30 11:12:16.820  INFO 18386 --- [RMI TCP Connection(2)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2017-09-30 11:12:16.820  INFO 18386 --- [RMI TCP Connection(2)-127.0.0.1] ConfigServletWebServerApplicationContext : Closing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@441772e: startup date [Sat Sep 30 11:00:12 BDT 2017]; root of context hierarchy
+2017-09-30 11:12:16.822  INFO 18386 --- [RMI TCP Connection(2)-127.0.0.1] o.s.j.e.a.AnnotationMBeanExporter        : Unregistering JMX-exposed beans on shutdown
+2017-09-30 11:12:16.823  INFO 18386 --- [RMI TCP Connection(2)-127.0.0.1] o.s.j.e.a.AnnotationMBeanExporter        : Unregistering JMX-exposed beans
+2017-09-30 11:12:16.823  INFO 18386 --- [RMI TCP Connection(2)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2017-09-30 11:12:16.824  INFO 18386 --- [RMI TCP Connection(2)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : testdb - Shutdown initiated...
+2017-09-30 11:12:16.831  INFO 18386 --- [RMI TCP Connection(2)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : testdb - Shutdown completed.
+2017-09-30 11:12:23.518  INFO 19688 --- [main] c.vNoticeBoard.VNoticeBoardApplication   : Starting VNoticeBoardApplication on me with PID 19688 (/home/farid/Projects/Java/vNoticeBoard/bin started by farid in /home/farid/Projects/Java/vNoticeBoard)
+2017-09-30 11:12:23.521  INFO 19688 --- [main] c.vNoticeBoard.VNoticeBoardApplication   : No active profile set, falling back to default profiles: default
+2017-09-30 11:12:23.678  INFO 19688 --- [main] ConfigServletWebServerApplicationContext : Refreshing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@441772e: startup date [Sat Sep 30 11:12:23 BDT 2017]; root of context hierarchy
+2017-09-30 11:12:24.638  INFO 19688 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2017-09-30 11:12:24.647  INFO 19688 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2017-09-30 11:12:24.648  INFO 19688 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.20
+2017-09-30 11:12:24.701  INFO 19688 --- [localhost-startStop-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2017-09-30 11:12:24.701  INFO 19688 --- [localhost-startStop-1] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1025 ms
+2017-09-30 11:12:24.785  INFO 19688 --- [localhost-startStop-1] o.s.b.w.servlet.ServletRegistrationBean  : Mapping servlet: 'dispatcherServlet' to [/]
+2017-09-30 11:12:24.787  INFO 19688 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'characterEncodingFilter' to: [/*]
+2017-09-30 11:12:24.788  INFO 19688 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2017-09-30 11:12:24.788  INFO 19688 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2017-09-30 11:12:24.788  INFO 19688 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'requestContextFilter' to: [/*]
+2017-09-30 11:12:24.966  INFO 19688 --- [main] com.zaxxer.hikari.HikariDataSource       : testdb - Starting...
+2017-09-30 11:12:24.990  INFO 19688 --- [main] com.zaxxer.hikari.pool.PoolBase          : testdb - Driver does not support get/set network timeout for connections. (Method org.postgresql.jdbc4.Jdbc4Connection.getNetworkTimeout() is not yet implemented.)
+2017-09-30 11:12:25.005  INFO 19688 --- [main] com.zaxxer.hikari.HikariDataSource       : testdb - Start completed.
+2017-09-30 11:12:25.032  INFO 19688 --- [main] j.LocalContainerEntityManagerFactoryBean : Building JPA container EntityManagerFactory for persistence unit 'default'
+2017-09-30 11:12:25.040  INFO 19688 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2017-09-30 11:12:25.078  INFO 19688 --- [main] org.hibernate.Version                    : HHH000412: Hibernate Core {5.2.10.Final}
+2017-09-30 11:12:25.079  INFO 19688 --- [main] org.hibernate.cfg.Environment            : HHH000206: hibernate.properties not found
+2017-09-30 11:12:25.100  INFO 19688 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+2017-09-30 11:12:25.263  INFO 19688 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL94Dialect
+2017-09-30 11:12:25.364  INFO 19688 --- [main] o.h.e.j.e.i.LobCreatorBuilderImpl        : HHH000424: Disabling contextual LOB creation as createClob() method threw error : java.lang.reflect.InvocationTargetException
+2017-09-30 11:12:25.365  INFO 19688 --- [main] org.hibernate.type.BasicTypeRegistry     : HHH000270: Type registration [java.util.UUID] overrides previous : org.hibernate.type.UUIDBinaryType@79c5460e
+2017-09-30 11:12:25.598  WARN 19688 --- [main] o.h.t.s.i.ExceptionHandlerLoggedImpl     : GenerationTarget encountered exception accepting command : Error executing DDL via JDBC Statement
+
+org.hibernate.tool.schema.spi.CommandAcceptanceException: Error executing DDL via JDBC Statement
+	at org.hibernate.tool.schema.internal.exec.GenerationTargetToDatabase.accept(GenerationTargetToDatabase.java:67) ~[hibernate-core-5.2.10.Final.jar:5.2.10.Final]
+	at org.hibernate.tool.schema.internal.AbstractSchemaMigrator.applySqlString(AbstractSchemaMigrator.java:525) [hibernate-core-5.2.10.Final.jar:5.2.10.Final]
+	at org.hibernate.tool.schema.internal.AbstractSchemaMigrator.applySqlStrings(AbstractSchemaMigrator.java:470) [hibernate-core-5.2.10.Final.jar:5.2.10.Final]
+	at org.hibernate.tool.schema.internal.AbstractSchemaMigrator.createTable(AbstractSchemaMigrator.java:273) [hibernate-core-5.2.10.Final.jar:5.2.10.Final]
+	at org.hibernate.tool.schema.internal.GroupedSchemaMigratorImpl.performTablesMigration(GroupedSchemaMigratorImpl.java:71) ~[hibernate-core-5.2.10.Final.jar:5.2.10.Final]
+	at org.hibernate.tool.schema.internal.AbstractSchemaMigrator.performMigration(AbstractSchemaMigrator.java:203) [hibernate-core-5.2.10.Final.jar:5.2.10.Final]
+	at org.hibernate.tool.schema.internal.AbstractSchemaMigrator.doMigration(AbstractSchemaMigrator.java:110) [hibernate-core-5.2.10.Final.jar:5.2.10.Final]
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.performDatabaseAction(SchemaManagementToolCoordinator.java:183) [hibernate-core-5.2.10.Final.jar:5.2.10.Final]
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.process(SchemaManagementToolCoordinator.java:72) [hibernate-core-5.2.10.Final.jar:5.2.10.Final]
+	at org.hibernate.internal.SessionFactoryImpl.<init>(SessionFactoryImpl.java:309) [hibernate-core-5.2.10.Final.jar:5.2.10.Final]
+	at org.hibernate.boot.internal.SessionFactoryBuilderImpl.build(SessionFactoryBuilderImpl.java:452) [hibernate-core-5.2.10.Final.jar:5.2.10.Final]
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:889) [hibernate-core-5.2.10.Final.jar:5.2.10.Final]
+	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:57) [spring-orm-5.0.0.RC4.jar:5.0.0.RC4]
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:358) [spring-orm-5.0.0.RC4.jar:5.0.0.RC4]
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:384) [spring-orm-5.0.0.RC4.jar:5.0.0.RC4]
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:373) [spring-orm-5.0.0.RC4.jar:5.0.0.RC4]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1761) [spring-beans-5.0.0.RC4.jar:5.0.0.RC4]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1698) [spring-beans-5.0.0.RC4.jar:5.0.0.RC4]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:583) [spring-beans-5.0.0.RC4.jar:5.0.0.RC4]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:502) [spring-beans-5.0.0.RC4.jar:5.0.0.RC4]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:312) [spring-beans-5.0.0.RC4.jar:5.0.0.RC4]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:228) ~[spring-beans-5.0.0.RC4.jar:5.0.0.RC4]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:310) [spring-beans-5.0.0.RC4.jar:5.0.0.RC4]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200) [spring-beans-5.0.0.RC4.jar:5.0.0.RC4]
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1083) ~[spring-context-5.0.0.RC4.jar:5.0.0.RC4]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:858) ~[spring-context-5.0.0.RC4.jar:5.0.0.RC4]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:549) ~[spring-context-5.0.0.RC4.jar:5.0.0.RC4]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:122) ~[spring-boot-2.0.0.M4.jar:2.0.0.M4]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:750) ~[spring-boot-2.0.0.M4.jar:2.0.0.M4]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:386) ~[spring-boot-2.0.0.M4.jar:2.0.0.M4]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:327) ~[spring-boot-2.0.0.M4.jar:2.0.0.M4]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1245) ~[spring-boot-2.0.0.M4.jar:2.0.0.M4]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1233) ~[spring-boot-2.0.0.M4.jar:2.0.0.M4]
+	at com.vNoticeBoard.VNoticeBoardApplication.main(VNoticeBoardApplication.java:10) ~[bin/:na]
+Caused by: org.postgresql.util.PSQLException: ERROR: relation "board" already exists
+	at org.postgresql.core.v3.QueryExecutorImpl.receiveErrorResponse(QueryExecutorImpl.java:2270) ~[postgresql-9.4-1200-jdbc41.jar:9.4]
+	at org.postgresql.core.v3.QueryExecutorImpl.processResults(QueryExecutorImpl.java:1998) ~[postgresql-9.4-1200-jdbc41.jar:9.4]
+	at org.postgresql.core.v3.QueryExecutorImpl.execute(QueryExecutorImpl.java:255) ~[postgresql-9.4-1200-jdbc41.jar:9.4]
+	at org.postgresql.jdbc2.AbstractJdbc2Statement.execute(AbstractJdbc2Statement.java:570) ~[postgresql-9.4-1200-jdbc41.jar:9.4]
+	at org.postgresql.jdbc2.AbstractJdbc2Statement.executeWithFlags(AbstractJdbc2Statement.java:406) ~[postgresql-9.4-1200-jdbc41.jar:9.4]
+	at org.postgresql.jdbc2.AbstractJdbc2Statement.execute(AbstractJdbc2Statement.java:398) ~[postgresql-9.4-1200-jdbc41.jar:9.4]
+	at com.zaxxer.hikari.pool.ProxyStatement.execute(ProxyStatement.java:95) ~[HikariCP-2.7.1.jar:na]
+	at com.zaxxer.hikari.pool.HikariProxyStatement.execute(HikariProxyStatement.java) ~[HikariCP-2.7.1.jar:na]
+	at org.hibernate.tool.schema.internal.exec.GenerationTargetToDatabase.accept(GenerationTargetToDatabase.java:54) ~[hibernate-core-5.2.10.Final.jar:5.2.10.Final]
+	... 33 common frames omitted
+
+2017-09-30 11:12:25.663  INFO 19688 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2017-09-30 11:12:26.132  INFO 19688 --- [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : Looking for @ControllerAdvice: org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@441772e: startup date [Sat Sep 30 11:12:23 BDT 2017]; root of context hierarchy
+2017-09-30 11:12:26.176  INFO 19688 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/{boardName}],methods=[GET]}" onto public java.lang.String com.vNoticeBoard.controller.BoardController.showBoard(java.lang.String,org.springframework.ui.Model)
+2017-09-30 11:12:26.177  INFO 19688 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/{boardName}/edit],methods=[GET]}" onto public java.lang.String com.vNoticeBoard.controller.BoardController.editBoard(java.lang.String,org.springframework.ui.Model)
+2017-09-30 11:12:26.177  INFO 19688 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/{boardName}/edit],methods=[POST]}" onto public java.lang.String com.vNoticeBoard.controller.BoardController.doEditBoard(java.lang.String,org.springframework.web.context.request.WebRequest,org.springframework.web.servlet.mvc.support.RedirectAttributes,org.springframework.ui.Model)
+2017-09-30 11:12:26.177  INFO 19688 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/register],methods=[POST]}" onto public java.lang.String com.vNoticeBoard.controller.BoardController.registerBoard(com.vNoticeBoard.dto.RegistrationForm,org.springframework.validation.BindingResult,org.springframework.web.context.request.WebRequest,org.springframework.web.servlet.mvc.support.RedirectAttributes)
+2017-09-30 11:12:26.177  INFO 19688 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/],methods=[GET]}" onto public java.lang.String com.vNoticeBoard.controller.HomeController.showHome()
+2017-09-30 11:12:26.181  INFO 19688 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2017-09-30 11:12:26.182  INFO 19688 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2017-09-30 11:12:26.210  INFO 19688 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2017-09-30 11:12:26.210  INFO 19688 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2017-09-30 11:12:26.239  INFO 19688 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2017-09-30 11:12:26.703  INFO 19688 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Registering beans for JMX exposure on startup
+2017-09-30 11:12:26.704  INFO 19688 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Bean with name 'dataSource' has been autodetected for JMX exposure
+2017-09-30 11:12:26.708  INFO 19688 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Located MBean 'dataSource': registering with JMX server as MBean [com.zaxxer.hikari:name=dataSource,type=HikariDataSource]
+2017-09-30 11:12:26.737  INFO 19688 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http)
+2017-09-30 11:12:26.739  INFO 19688 --- [main] c.vNoticeBoard.VNoticeBoardApplication   : Started VNoticeBoardApplication in 3.496 seconds (JVM running for 3.88)
+2017-09-30 11:12:30.353  INFO 19688 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring FrameworkServlet 'dispatcherServlet'
+2017-09-30 11:12:30.354  INFO 19688 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : FrameworkServlet 'dispatcherServlet': initialization started
+2017-09-30 11:12:30.367  INFO 19688 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : FrameworkServlet 'dispatcherServlet': initialization completed in 13 ms
+2017-09-30 11:12:30.409  INFO 19688 --- [http-nio-8080-exec-1] o.h.h.i.QueryTranslatorFactoryInitiator  : HHH000397: Using ASTQueryTranslatorFactory
+2017-09-30 11:12:30.707  WARN 19688 --- [http-nio-8080-exec-1] n.n.u.t.decorators.DecoratorProcessor    : The layout:decorator/data-layout-decorator processor has been deprecated and will be removed in the next major version of the layout dialect.  Please use layout:decorate/data-layout-decorate instead to future-proof your code.  See https://github.com/ultraq/thymeleaf-layout-dialect/issues/95 for more information.
+2017-09-30 11:12:30.775  WARN 19688 --- [http-nio-8080-exec-1] n.n.u.t.expressions.ExpressionProcessor  : Fragment expression "layouts/main" is being wrapped as a Thymeleaf 3 fragment expression (~{...}) for backwards compatibility purposes.  This wrapping will be dropped in the next major version of the expression processor, so please rewrite as a Thymeleaf 3 fragment expression to future-proof your code.  See https://github.com/thymeleaf/thymeleaf/issues/451 for more information.
+2017-09-30 11:12:30.932  WARN 19688 --- [http-nio-8080-exec-1] n.n.u.t.d.TitlePatternProcessor          : The $DECORATOR_TITLE token is deprecated and will be removed in the next major version of the layout dialect.  Please use the $LAYOUT_TITLE token instead to future-proof your code.  See https://github.com/ultraq/thymeleaf-layout-dialect/issues/95 for more information.

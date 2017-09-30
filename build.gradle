@@ -31,8 +31,20 @@ repositories {
 
 
 dependencies {
-	compile('org.springframework.boot:spring-boot-starter-thymeleaf')
-	compile 'org.webjars:bootstrap:3.3.7'
+	compile("org.springframework.boot:spring-boot-starter-thymeleaf")
 	compile('org.springframework.boot:spring-boot-starter-web')
+	compile "org.springframework.boot:spring-boot-starter-data-jpa"
+	compile 'org.webjars:bootstrap:3.3.7'
+	compile group: 'nz.net.ultraq.thymeleaf', name: 'thymeleaf-layout-dialect', version: '2.2.2'
+	// https://mvnrepository.com/artifact/org.postgresql/postgresql
+	compile group: 'org.postgresql', name: 'postgresql', version: '9.4-1200-jdbc41'
+	// https://mvnrepository.com/artifact/ch.qos.logback/logback-core
+	compile group: 'ch.qos.logback', name: 'logback-core', version: '1.2.3'
+	// https://mvnrepository.com/artifact/ch.qos.logback.contrib/logback-jackson
+	compile group: 'ch.qos.logback.contrib', name: 'logback-jackson', version: '0.1.5'
+	
+	
+	// https://mvnrepository.com/artifact/ch.qos.logback/logback-classic
+	testCompile group: 'ch.qos.logback', name: 'logback-classic', version: '1.2.3'
 	testCompile('org.springframework.boot:spring-boot-starter-test')
 }
